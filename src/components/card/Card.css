@@ -1,0 +1,46 @@
+.Card {
+  height: 389px;
+  width: 346px;
+  gap: 1.5rem;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+  font-family: Rubik Mono One;
+}
+
+.Tree img {
+  width: 120px;
+  height: 122px;
+}
+
+.Card-body {
+  background: white;
+  width: 279px;
+  height: 391px;
+  overflow: hidden;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 58px;
+}
+
+.Card-body h3 {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.Card-list {
+  display: flex;
+  justify-content: left;
+}
+
+.Status img {
+  margin-top: 10px;
+  width: 51px;
+  height: 51px;
+}
+
+.Status {
+  padding-top: 10px;
+  padding-left: 20px;
+  display: grid;
+}
