@@ -19,11 +19,15 @@ body {
   display: table;
 }
 h2 {
-  margin-top: 80px;
+  margin-top: 50px;
   text-align: right;
 }
 .container-right-img {
   display: table;
+}
+.container-right-img img {
+  width: 44px;
+  height: 44px;
 }
 .description {
   padding: 20px;
