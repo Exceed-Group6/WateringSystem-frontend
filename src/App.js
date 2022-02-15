@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import DetailCard from './components/DetailCard/DetailCard';
+import Detail from './pages/Detail/Detail';
+
 
 function App() {
   return (
-    <div className="App">
-      <DetailCard></DetailCard>
+    <div >
+      <Detail></Detail>
     </div>
   );
 }
