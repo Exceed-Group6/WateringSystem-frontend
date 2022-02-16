@@ -1,0 +1,155 @@
+
+.container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); */
+  /* display: grid; */
+  /* background-color: white; */
+  /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+}
+
+/* .Header h1 {
+  text-align: center;
+} */
+
+.Header {
+  background-color: white;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+}
+
+.cardBack {
+  margin-top: 100px;
+  background-color: white;
+  display: grid;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  height: 700px;
+  width: 1200px;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.inputBar {
+  background-color: white;
+}
+
+.discri {
+  background-color: white;
+}
+
+.discri img {
+  /* margin-left: 800px;
+  margin-top: 50px; */
+  background-color: white;
+  height: 300px;
+  width: 300px;
+}
+
+.nametree {
+  margin: 20px 0;
+  background-color: #FFE4E4;
+  outline: none;
+  border: 0;
+  padding: 10px;
+  border-radius: 20px;
+  height: 50px;
+  width: 300px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: large;
+}
+
+.discription {
+  margin: 0;
+  background-color: #F7FFF5;
+  outline: none;
+  padding: 20px;
+  border: 0;
+  border-radius: 20px;
+  height: 200px;
+  width: 500px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cardbody {
+  margin-top: 30px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+.idInput i {
+  margin: 30px;
+  margin-left: 150px;
+}
+
+.idInput input {
+  background-color: #DBF4FF;
+  outline: none;
+  border: 0;
+  margin: 30px 0;
+  margin-left: 40px;
+  border-radius: 20px;
+  height: 60px;
+  width: 250px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.botToggle {
+  display: flex;
+}
+
+.idInput {
+  display: flex;
+}
+
+.sunInput {
+  display: flex;
+}
+
+.waterInput {
+  display: flex;
+}
+
+.tempInput {
+  display: flex;
+}
+
+.botToggle i {
+  margin: 30px;
+  margin-left: 60px;
+}
+
+.sunInput i {
+  margin: 30px;
+  margin-left: 45px;
+}
+
+.waterInput i {
+  margin: 30px;
+  margin-left: 60px;
+}
+
+.tempInput i {
+  margin: 30px;
+  margin-left: 60px;
+  margin-right: 40px;
+}
+
+.threemid input {
+  background-color: #DBF4FF;
+  outline: none;
+  border: 0;
+  margin: 30px 10px;
+  /* margin-left: 20px; */
+  border-radius: 20px;
+  height: 60px;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
