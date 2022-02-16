@@ -81,10 +81,8 @@ const DetailCard = () => {
                             <p className="graph-button">
                                 <img src="./graph.png" alt="graph"></img>
                             </p>
-
-
                         </a>
-
+                        <button type="button" class="btn btn-danger">Delete this tree</button>
                     </div>
                 </div>
             </div>
