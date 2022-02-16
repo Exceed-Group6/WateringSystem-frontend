@@ -21,6 +21,10 @@ body {
 h2 {
   margin-top: 50px;
   text-align: right;
+  margin-right: 20px;
+}
+.w3-container {
+  margin-top: 60px;
 }
 .container-right-img {
   display: table;
@@ -28,6 +32,14 @@ h2 {
 .container-right-img img {
   width: 44px;
   height: 44px;
+}
+.container-right-progress {
+  width: 500px;
+}
+.container-right-progress img {
+  width: 44px;
+  height: 44px;
+  margin-left: 50px;
 }
 .description {
   padding: 20px;
@@ -40,7 +52,22 @@ h2 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 27px;
 }
-
+.w3-green {
+  height: 24px;
+  width: 60%;
+  padding-left: auto;
+  margin-bottom: 50px;
+}
+.w3-red {
+  height: 24px;
+  width: 50%;
+  margin-bottom: 50px;
+}
+.w3-blue {
+  height: 24px;
+  width: 40%;
+  margin-bottom: 50px;
+}
 img {
   display: block;
   margin-left: auto;
