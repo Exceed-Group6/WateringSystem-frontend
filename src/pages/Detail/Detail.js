@@ -9,7 +9,7 @@ const Detail = () => {
                 <a href="#">
                     <i class="fa-solid fa-angles-left fa-2xl"></i>
                 </a>
-                <h1 className="title" >Tree 1 </h1>
+                <h1 className="title" >Tree 1 <img src="treeicon.png" alt="treeicon"></img></h1>
             </nav>
             <div> <DetailCard></DetailCard></div>
         </body>

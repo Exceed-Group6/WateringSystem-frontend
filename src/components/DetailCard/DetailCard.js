@@ -7,7 +7,6 @@ const DetailCard = () => {
 
             <div className="container">
                 <div className="container-left">
-
                     <img src="./tree.jpeg" alt="tree"></img>
                     <div className="description">
                         <h3 color="gray">Description</h3>
