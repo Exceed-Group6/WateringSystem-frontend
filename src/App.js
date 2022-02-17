@@ -1,12 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
+import Detail from "./pages/Detail/Detail";
 import Home from "./pages/Home";
-import DetailCard from "./components/DetailCard/DetailCard";
+// import DetailCard from "./components/DetailCard/DetailCard";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Detail />
     </div>
   );
 }

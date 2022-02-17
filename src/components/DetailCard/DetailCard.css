@@ -18,17 +18,21 @@ body {
   margin-bottom: 20px;
   display: table;
 }
+
 h2 {
   margin-top: 50px;
   text-align: right;
   margin-right: 20px;
 }
+
 .w3-container {
   margin-top: 60px;
 }
+
 .container-right-img {
   display: table;
 }
+
 .container-right-img img {
   width: 44px;
   height: 44px;
@@ -60,30 +64,36 @@ h2 {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 27px;
 }
+
 .w3-green {
   height: 24px;
   width: 60%;
   padding-left: auto;
   margin-bottom: 50px;
 }
+
 .w3-red {
   height: 24px;
   width: 50%;
   margin-bottom: 50px;
 }
+
 .w3-blue {
   height: 24px;
   width: 40%;
   margin-bottom: 50px;
 }
+
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 242px;
+  height: 242px;
   margin-top: 50px;
   margin-bottom: 50px;
 }
+
 .time-button {
   margin-left: 50px;
   margin-top: 60px;
@@ -102,6 +112,7 @@ img {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
   border-radius: 13px;
 }
+
 .watering-button {
   margin-left: 80px;
   margin-top: 40px;
@@ -124,14 +135,15 @@ img {
   margin-top: 10px;
   margin-left: 80px;
 }
+
 .preference-button {
   text-decoration: none;
   font-size: 30px;
   padding-left: 30px;
 }
+
 .pref-img {
   margin: 0px;
-
   width: 44px;
   height: 44px;
 }
