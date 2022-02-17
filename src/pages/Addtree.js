@@ -1,20 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
+import Switch from '../components/Switch'
 import './Addtree.css'
 
 function Addtree() {
+
+  const [value, setValue] = useState(false);
+
   return (
     <body>
     <div>
       <div className='Header'>
-        <div className='row'>
-          <div className='back'>
-            <i class="fa-solid fa-angles-left fa-2x"></i>
+        <div class='row'>
+          <div className='back' class="col">
+            <a href='https://www.apple.com/th/'>
+              <i class="fa-solid fa-angles-left fa-2x"></i>
+            </a>
           </div>
-          <div className='name'>
+          <div className='name' class="col">
             <h1>hi</h1>
           </div>
-          <div className='saving'>
-            <i class="fa-solid fa-floppy-disk fa-2x"></i>
+          <div className='saving' class="col">
+            <a href='https://www.youtube.com'>
+              <i class="fa-solid fa-floppy-disk fa-2x"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -48,7 +56,9 @@ function Addtree() {
             </div>
             <div className='botToggle'>
               <i class="fa-solid fa-robot fa-4x"></i>
-              
+              <div className='switch'>
+                <Switch className='switch' isOn={value} handleToggle={() => setValue(!value)} />
+              </div>
             </div>
           </div>
           <div className='discri'>
