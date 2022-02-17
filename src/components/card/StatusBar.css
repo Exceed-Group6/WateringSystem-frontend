@@ -1,0 +1,67 @@
+img {
+  margin-top: 10px;
+  width: 51px;
+  height: 51px;
+}
+
+.StatusBar {
+  justify-content: left;
+  padding-top: 10px;
+  padding-left: 20px;
+  display: grid;
+}
+
+.Light-bar {
+  margin-left: 10px;
+  width: 190px;
+  height: 7.07px;
+  left: 222px;
+  top: 430.54px;
+  background: #b2a68d;
+  border-radius: 103px;
+}
+
+.Light {
+  display: flex;
+  align-items: center;
+}
+
+.Humid-bar {
+  margin-left: 10px;
+  width: 190px;
+  height: 7.07px;
+  left: 222px;
+  top: 430.54px;
+  background: #b2a68d;
+  border-radius: 103px;
+}
+
+.Humid {
+  display: flex;
+  align-items: center;
+}
+
+.Temp-bar {
+  margin-left: 10px;
+  width: 190px;
+  height: 7.07px;
+  left: 222px;
+  top: 430.54px;
+  background: #b2a68d;
+  border-radius: 103px;
+}
+
+.Temp {
+  display: flex;
+  align-items: center;
+}
+
+.Center-dot {
+  width: 14.15px;
+  height: 14.15px;
+  left: 322.8px;
+  top: 473px;
+  background: #b2a68d;
+
+  border-radius: 50px;
+}

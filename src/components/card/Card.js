@@ -1,5 +1,5 @@
 import "./Card.css";
-import Status from "./StatusBar";
+import StatusBar from "./StatusBar";
 
 const Card = ({ id, name, light, humid, temp }) => {
   return (
@@ -11,11 +11,7 @@ const Card = ({ id, name, light, humid, temp }) => {
         <div className="Tree">
           <img src="./pictures/tree.png" alt="tree"></img>
         </div>
-        <div className="Status">
-          <img src="./pictures/sun.png" alt=""></img>
-          <img src="./pictures/water.png" alt=""></img>
-          <img src="./pictures/temp.png" alt=""></img>
-        </div>
+        <StatusBar light={light} humid={humid} temp={temp} />
       </div>
     </div>
   );

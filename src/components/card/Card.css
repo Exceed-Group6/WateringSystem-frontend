@@ -32,15 +32,3 @@
   display: flex;
   justify-content: left;
 }
-
-.Status img {
-  margin-top: 10px;
-  width: 51px;
-  height: 51px;
-}
-
-.Status {
-  padding-top: 10px;
-  padding-left: 20px;
-  display: grid;
-}
