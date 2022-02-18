@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import Switch from "../components/Switch"
-import "./Addtree.css"
+import React, { useState } from "react";
+import Switch from "../components/Switch";
+import "./Addtree.css";
 
 function Addtree() {
-  const [value, setValue] = useState(false)
+  const [value, setValue] = useState(false);
 
   return (
     <body>
@@ -25,7 +25,7 @@ function Addtree() {
           </a>
         </div>
       </nav>
-      <div className="container">
+      <div className="a-container">
         <div className="cardBack">
           <div className="cardbody">
             <div className="inputBar">
@@ -82,7 +82,7 @@ function Addtree() {
         </div>
       </div>
     </body>
-  )
+  );
 }
 
-export default Addtree
+export default Addtree;

@@ -1,16 +1,10 @@
-
-.container {
+.a-container {
   position: relative;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   margin-left: auto;
   margin-right: auto;
-  /* text-align: center; */
-  /* box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); */
-  /* display: grid; */
-  /* background-color: white; */
-  /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
 }
 
 nav {
@@ -86,7 +80,7 @@ a:hover {
 
 .nametree {
   margin: 20px 0;
-  background-color: #FFE4E4;
+  background-color: #ffe4e4;
   outline: none;
   border: 0;
   padding: 10px;
@@ -100,7 +94,7 @@ a:hover {
 
 .discription {
   margin: 0;
-  background-color: #F7FFF5;
+  background-color: #f7fff5;
   outline: none;
   padding: 20px;
   border: 0;
@@ -124,7 +118,7 @@ a:hover {
 }
 
 .idInput input {
-  background-color: #DBF4FF;
+  background-color: #dbf4ff;
   outline: none;
   border: 0;
   margin: 30px 0;
@@ -182,7 +176,7 @@ a:hover {
 }
 
 .threemid input {
-  background-color: #DBF4FF;
+  background-color: #dbf4ff;
   outline: none;
   border: 0;
   margin: 30px 10px;
