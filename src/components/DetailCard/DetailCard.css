@@ -13,6 +13,9 @@ body {
 .container-right {
   display: flex;
 }
+.pref-img {
+  margin: auto;
+}
 .container-left {
   padding-left: 40px;
 }
