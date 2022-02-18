@@ -19,20 +19,20 @@ export const Home = () => {
   console.log(treeList.result);
 
   return (
-    <div className='Home'>
-      <nav className='sticky-top navbar navbar-expand-md navbar-light bg-success'>
-        <h1 className='Home-title'>Auto Watering System </h1>
+    <div className="Home">
+      <nav className="sticky-top navbar navbar-expand-md navbar-light bg-success">
+        <h1 className="Home-title">Auto Watering System </h1>
       </nav>
-      <div className='Card-list'>
+      <div className="Card-list">
         {treeList.map((tree) => (
           <Link to={`/detail/${tree.tree_id}`} key={tree.tree_id}>
             <Card id={tree.tree_id} />
           </Link>
         ))}
       </div>
-      <div className='Add-tree'>
+      <div className="Add-tree">
         <Link to={`/addTree`}>
-          <img src='./pictures/plus.png' alt='Add'></img>
+          <img src="./pictures/plus.png" alt="Add"></img>
         </Link>
       </div>
     </div>

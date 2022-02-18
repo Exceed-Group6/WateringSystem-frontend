@@ -24,9 +24,15 @@
   margin-left: 50px;
   color: black;
 }
+
 .Card {
   transition: transform 0.3s;
 }
+
 .Card:hover {
+  transform: scale(1.05);
+}
+
+.Add-tree img:hover {
   transform: scale(1.05);
 }
