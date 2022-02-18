@@ -1,9 +1,9 @@
-import React, { useState } from "react"
-import Switch from "../components/Switch"
-import "./PreferencePage.css"
+import React, { useState } from "react";
+import Switch from "../components/Switch";
+import "./PreferencePage.css";
 
 function PreferencePage() {
-  const [value, setValue] = useState(false)
+  const [value, setValue] = useState(false);
 
   return (
     <body>
@@ -25,7 +25,7 @@ function PreferencePage() {
           </a>
         </div>
       </nav>
-      <div className="container">
+      <div className="p-container">
         <div className="cardBack">
           <div className="cardbody">
             <div className="inputBar">
@@ -82,7 +82,7 @@ function PreferencePage() {
         </div>
       </div>
     </body>
-  )
+  );
 }
 
-export default PreferencePage
+export default PreferencePage;
