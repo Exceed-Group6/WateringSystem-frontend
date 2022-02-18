@@ -29,7 +29,7 @@
 }
 
 .Card-list {
-  display: flex;
+  display: grid;
   justify-content: left;
   margin: 50px;
 }
