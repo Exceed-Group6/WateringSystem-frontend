@@ -1,4 +1,5 @@
 import "./App.css";
+import Addtree from "./pages/Addtree";
 import PreferencePage from "./pages/PreferencePage";
 import Detail from "./pages/Detail/Detail";
 import Home from "./pages/Home";
@@ -7,7 +8,7 @@ import Home from "./pages/Home";
 function App() {
   return (
     <div className="App">
-      <PreferencePage />
+      <Addtree />
     </div>
   );
 }

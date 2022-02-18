@@ -19,7 +19,7 @@ const Switch = ({ isOn, handleToggle }) => {
         <span className={`react-switch-button`} />
       </label>
     </>
-  )
-}
+  );
+};
 
-export default Switch
+export default Switch;
