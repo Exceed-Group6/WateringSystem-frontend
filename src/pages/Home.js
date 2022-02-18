@@ -22,6 +22,9 @@ export const Home = () => {
     <div className="Home">
       <nav className="sticky-top navbar navbar-expand-md navbar-light bg-success">
         <h1 className="Home-title">Auto Watering System </h1>
+        <div className="leaf">
+          <img src="./leaf.png" alt=""></img>
+        </div>
       </nav>
       <div className="Card-list">
         {treeList.map((tree) => (
