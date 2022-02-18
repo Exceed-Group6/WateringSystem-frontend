@@ -1,12 +1,12 @@
-import './App.css';
-import Addtree from './pages/Addtree';
+import "./App.css"
+import PreferencePage from "./pages/PreferencePage"
 
 function App() {
   return (
     <div className="App">
-      <Addtree />
+      <PreferencePage />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

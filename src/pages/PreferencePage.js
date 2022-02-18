@@ -14,10 +14,10 @@ function PreferencePage() {
           </a>
         </div>
         <div className="name">
-          <h1>Add Tree</h1>
+          <h1>Preference Tree</h1>
         </div>
         <div className="picTree">
-          <img src="./Addtree.png" alt=""></img>
+          <img src="./Setting.png" alt=""></img>
         </div>
         <div className="save">
           <a href="https://www.youtube.com">
