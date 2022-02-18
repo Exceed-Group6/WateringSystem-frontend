@@ -19,7 +19,17 @@
   padding-right: 80px;
 }
 
-.Detail a {
+.navbar a {
   margin-left: 50px;
   color: black;
+}
+
+.navbar a:hover {
+  margin-left: 50px;
+  color: #e6dcb7;
+}
+
+.navbar img {
+  width: 44px;
+  height: 44px;
 }
