@@ -6,7 +6,7 @@ export const Home = () => {
   return (
     <div className="Home">
       <nav className="sticky-top navbar navbar-expand-md navbar-light bg-success">
-        <h1 className="title">Auto Watering System </h1>
+        <h1 className="Home-title">Auto Watering System </h1>
       </nav>
       <div className="Card-list">
         <Card />
