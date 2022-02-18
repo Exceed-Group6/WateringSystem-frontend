@@ -29,11 +29,11 @@
   color: black;
 }
 
-.Card {
+.Card-body {
   transition: transform 0.3s;
 }
 
-.Card:hover {
+.Card-body:hover {
   transform: scale(1.05);
 }
 
