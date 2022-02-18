@@ -7,13 +7,16 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
+      {/* <Detail></Detail> */}
       <Routes>
-        <Route path="/home" element={<Home />}></Route>
-        <Route path="/addTree" element={<Addtree />}></Route>
-        <Route path="/detail/:treeId" element={<Detail />}></Route>
-        <Route path="/preference/:treeId" element={<PreferencePage />}></Route>
-        <Route path="*" element={<Home />}></Route>
+        <Route path='/home' element={<Home />}></Route>
+        <Route path='/addTree' element={<Addtree />}></Route>
+        <Route path='/detail' element={<Detail />}></Route>
+        <Route path='/detail/:treeId' element={<Detail />}></Route>
+        <Route path='/preference/' element={<PreferencePage />}></Route>
+        <Route path='/preference/:treeId' element={<PreferencePage />}></Route>
+        <Route path='*' element={<Home />}></Route>
       </Routes>
     </div>
   );
