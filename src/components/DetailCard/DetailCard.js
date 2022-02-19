@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Segmentedbar from "../segmentedbar/Segmentedbar";
 import { deleteTree, getTreeById } from "../../services/api";
 
-const DetailCard = ({ treeList }) => {
+const DetailCard = ({ treeList, treeId }) => {
   let percentLight =
     ((treeList?.base_light?.current - treeList?.base_light?.set[0]) * 100) /
     (treeList?.base_light?.set[2] - treeList?.base_light?.set[0]);
@@ -80,7 +80,11 @@ const DetailCard = ({ treeList }) => {
             <div className='container-right-progress'></div>
           </div>
           <div className='container-right'>
-            <Link to={`/preference`} className='preference-button'>
+            <Link
+              to={`/preference/${treeId}`}
+              key={treeId}
+              className='preference-button'
+            >
               Preference configuration
               <img className='pref-img' src='./edit.png' alt='edit'></img>
             </Link>

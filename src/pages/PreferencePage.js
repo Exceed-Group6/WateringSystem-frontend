@@ -1,148 +1,175 @@
-import React, { useState } from "react"
-import Switch from "../components/Switch"
-import "./PreferencePage.css"
-import { Link } from "react-router-dom"
+import React, { useState, useEffect } from "react";
+
+import Switch from "../components/Switch";
+import "./PreferencePage.css";
+import { Link, useParams } from "react-router-dom";
+import { getTreeById } from "../services/api";
 
 function PreferencePage() {
-  const [value, setValue] = useState(false)
+  const [value, setValue] = useState(false);
+  const { treeId } = useParams();
+
+  const [tree, setTree] = useState({});
+
+  const onGetTreeById = (id) => {
+    getTreeById(id).then((res) => {
+      setTree(res);
+    });
+  };
+
+  useEffect(() => {
+    onGetTreeById(treeId);
+    setValue(!tree.cur_bot_status);
+  }, []);
 
   return (
     <body>
-      <nav className="sticky-top navbar navbar-expand-md navbar-light bg-success">
-        <div className="back">
+      <nav className='sticky-top navbar navbar-expand-md navbar-light bg-success'>
+        <div className='back'>
           <Link to={`/Home`}>
-            <i class="fa-solid fa-angles-left fa-2x"></i>
+            <i class='fa-solid fa-angles-left fa-2x'></i>
           </Link>
         </div>
-        <div className="name">
-          <h1>Preference Tree</h1>
+        <div className='name'>
+          <h1>Preference : {tree.tree_name}</h1>
         </div>
-        <div className="picTree">
-          <img src="./Setting.png" alt=""></img>
+        <div className='picTree'>
+          <img src='./Setting.png' alt=''></img>
         </div>
-        <div className="save">
-          <a href="https://www.youtube.com">
-            <i class="fa-solid fa-floppy-disk fa-2x"></i>
+        <div className='save'>
+          <a href='https://www.youtube.com'>
+            <i class='fa-solid fa-floppy-disk fa-2x'></i>
           </a>
         </div>
       </nav>
-      <div className="p-container">
-        <div className="cardBack">
-          <div className="cardbody">
-            <div className="inputBar">
-              <div className="idInput">
+      <div className='p-container'>
+        <div className='cardBack'>
+          <div className='cardbody'>
+            <div className='inputBar'>
+              <div className='idInput'>
                 {/* <i class="fa-solid fa-id-badge fa-4x"></i> */}
-                <img src="./Id.png" alt=""></img>
+                <img src='./Id.png' alt=''></img>
                 <input
                   onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
-                  placeholder="UID"
-                  className="Id"
+                  placeholder='UID'
+                  className='Id'
+                  value={treeId}
                 ></input>
               </div>
-              <div className="threemid">
-                <div className="sunInput">
+              <div className='threemid'>
+                <div className='sunInput'>
                   {/* <i class="fa-solid fa-sun fa-4x"></i> */}
-                  <img src="./Sun.png" alt=""></img>
+                  <img src='./Sun.png' alt=''></img>
                   <input
                     onKeyPress={(e) =>
                       !/[0-9]/.test(e.key) && e.preventDefault()
                     }
-                    placeholder="Min"
-                    className="Sunmin"
-                    pattern="[0-9]*"
+                    placeholder='Min'
+                    className='Sunmin'
+                    pattern='[0-9]*'
+                    value={tree?.base_light?.set[0]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
                       !/[0-9]/.test(e.key) && e.preventDefault()
                     }
-                    placeholder="Mid"
-                    className="Sunmid"
+                    placeholder='Mid'
+                    className='Sunmid'
+                    value={tree?.base_light?.set[1]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
                       !/[0-9]/.test(e.key) && e.preventDefault()
                     }
-                    placeholder="Max"
-                    className="Sunmax"
+                    placeholder='Max'
+                    className='Sunmax'
+                    value={tree?.base_light?.set[2]}
                   ></input>
                 </div>
-                <div className="waterInput">
+                <div className='waterInput'>
                   {/* <i class="fa-solid fa-droplet fa-4x"></i> */}
-                  <img src="./Water.png" alt=""></img>
+                  <img src='./Water.png' alt=''></img>
                   <input
                     onKeyPress={(e) =>
                       !/[0-9]/.test(e.key) && e.preventDefault()
                     }
-                    placeholder="Min"
-                    className="Watermin"
+                    placeholder='Min'
+                    className='Watermin'
+                    value={tree?.base_humidity?.set[0]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
                       !/[0-9]/.test(e.key) && e.preventDefault()
                     }
-                    placeholder="Mid"
-                    className="Watermid"
+                    placeholder='Mid'
+                    className='Watermid'
+                    value={tree?.base_humidity?.set[1]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
                       !/[0-9]/.test(e.key) && e.preventDefault()
                     }
-                    placeholder="Max"
-                    className="Watermax"
+                    placeholder='Max'
+                    className='Watermax'
+                    value={tree?.base_humidity?.set[2]}
                   ></input>
                 </div>
-                <div className="tempInput">
+                <div className='tempInput'>
                   {/* <i class="fa-solid fa-temperature-quarter fa-4x"></i> */}
-                  <img src="./Temp.png" alt=""></img>
+                  <img src='./Temp.png' alt=''></img>
                   <input
                     onKeyPress={(e) =>
                       !/[0-9]/.test(e.key) && e.preventDefault()
                     }
-                    placeholder="Min"
-                    className="Tempmin"
+                    placeholder='Min'
+                    className='Tempmin'
+                    value={tree?.base_temp?.set[0]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
                       !/[0-9]/.test(e.key) && e.preventDefault()
                     }
-                    placeholder="Mid"
-                    className="Tempmid"
+                    placeholder='Mid'
+                    className='Tempmid'
+                    value={tree?.base_temp?.set[1]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
                       !/[0-9]/.test(e.key) && e.preventDefault()
                     }
-                    placeholder="Max"
-                    className="Tempmax"
+                    placeholder='Max'
+                    className='Tempmax'
+                    value={tree?.base_temp?.set[2]}
                   ></input>
                 </div>
               </div>
-              <div className="botToggle">
-                <i class="fa-solid fa-robot fa-4x"></i>
-                <div className="switch">
-                  <Switch
-                    className="switch"
-                    isOn={value}
-                    handleToggle={() => setValue(!value)}
-                  />
+              <div className='botToggle'>
+                <i class='fa-solid fa-robot fa-4x'></i>
+                <div className='switch'>
+                  <Switch className='switch' isOn={value} />
                 </div>
               </div>
             </div>
-            <div className="discri">
-              <img src="./tree.png" alt=""></img>
-              <br></br>
-              <textarea placeholder="Name Tree" className="nametree"></textarea>
+            <div className='discri'>
+              <img src='./tree.png' alt=''></img>
               <br></br>
               <textarea
-                placeholder="Discription..."
-                className="discription"
+                placeholder='Name Tree'
+                className='nametree'
+                value={tree?.tree_name}
+              ></textarea>
+              <br></br>
+              <textarea
+                placeholder='Discription...'
+                className='discription'
+                value={tree?.tree_desc}
               ></textarea>
             </div>
           </div>
         </div>
       </div>
     </body>
-  )
+  );
 }
 
-export default PreferencePage
+export default PreferencePage;
