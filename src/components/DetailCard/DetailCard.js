@@ -1,6 +1,7 @@
 import React from "react";
 import "./DetailCard.css";
 import { Link } from "react-router-dom";
+import Segmentedbar from "../segmentedbar/Segmentedbar";
 const DetailCard = () => {
   return (
     <body>
@@ -27,19 +28,12 @@ const DetailCard = () => {
             </div>
             <div className='container-right-progress'>
               <div class='w3-container'>
-                <div class='w3-light-grey'>
-                  <div class='w3-green'></div>
-                </div>
-                <br></br>
+                <Segmentedbar percentage='23' />
 
-                <div class='w3-light-grey'>
-                  <div class='w3-blue'></div>
-                </div>
                 <br></br>
-
-                <div class='w3-light-grey'>
-                  <div class='w3-red'></div>
-                </div>
+                <Segmentedbar percentage='63' />
+                <br></br>
+                <Segmentedbar percentage='80' />
               </div>
             </div>
           </div>
