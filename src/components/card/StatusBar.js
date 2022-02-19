@@ -5,12 +5,12 @@ import Segmentedbarhome from "../segmentedbarhome/Segmentedbarhome";
 import "./StatusBar.css";
 
 export const StatusBar = ({ light, humid, temp }) => {
-  const percentLight = light.current;
-  // ((light.current - light.set[0]) * 100) / (light.set[2] - light.set[0]);
-  const percentHumid = humid.current;
-  // ((humid.current - humid.set[0]) * 100) / (humid.set[2] - humid.set[0]);
-  const percentTemp = temp.current;
-  // ((temp.current - temp.set[0]) * 100) / (temp.set[2] - temp.set[0]);
+  const percentLight =
+    ((light.current - light.set[0]) * 100) / (light.set[2] - light.set[0]);
+  const percentHumid =
+    ((humid.current - humid.set[0]) * 100) / (humid.set[2] - humid.set[0]);
+  const percentTemp =
+    ((temp.current - temp.set[0]) * 100) / (temp.set[2] - temp.set[0]);
   return (
     <div className='StatusBar'>
       <div className='Light'>
