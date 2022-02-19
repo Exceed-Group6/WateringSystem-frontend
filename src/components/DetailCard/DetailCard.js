@@ -5,16 +5,36 @@ import Segmentedbar from "../segmentedbar/Segmentedbar";
 import { deleteTree, getTreeById } from "../../services/api";
 
 const DetailCard = ({ treeList }) => {
-  const percentLight =
+  let percentLight =
     ((treeList?.base_light?.current - treeList?.base_light?.set[0]) * 100) /
     (treeList?.base_light?.set[2] - treeList?.base_light?.set[0]);
-  const percentHumid =
+
+  let percentHumid =
     ((treeList?.base_humidity?.current - treeList?.base_humidity?.set[0]) *
       100) /
     (treeList?.base_humidity?.set[2] - treeList?.base_humidity?.set[0]);
-  const percentTemp =
+  let percentTemp =
     ((treeList?.base_temp?.current - treeList?.base_temp?.set[0]) * 100) /
     (treeList?.base_temp?.set[2] - treeList.base_temp?.set[0]);
+
+  if (percentLight > 100) {
+    percentLight = 100;
+  } else if (percentLight < 0) {
+    percentLight = 0;
+  }
+
+  if (percentHumid > 100) {
+    percentHumid = 100;
+  } else if (percentHumid < 0) {
+    percentHumid = 0;
+  }
+
+  if (percentTemp > 100) {
+    percentTemp = 100;
+  } else if (percentTemp < 0) {
+    percentTemp = 0;
+  }
+
   return (
     <div>
       <div className='container'>
