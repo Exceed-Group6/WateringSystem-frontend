@@ -1,0 +1,120 @@
+html{
+    background-color: #E6DCB7;;
+}
+
+h1 {
+    margin-top: 30px;
+  }
+  
+  .navbar {
+    text-align: center;
+    height: 80px;
+    left: 0px;
+    top: 0px;
+    
+    background: #ffffff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+  .title {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: auto !important;
+    padding-right: 20px;
+  }
+  
+  .navbar a {
+    margin-left: 50px;
+    color: black;
+  }
+  
+  .navbar a:hover {
+    margin-left: 50px;
+    color: #e6dcb7;
+  }
+  
+.fa-chart-line{
+    /* padding-right: 750px; */
+  }
+  
+  .text{
+    display: flex;
+    position: absolute;
+    top: 15%;
+    left: 45%;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+
+  .card{
+    overflow: hidden;
+    width: 1320px;
+    height: 699px;
+    margin-top: 30px;
+    display: flex;
+    position: relative;
+    background-color: white;
+    border-radius: 35px;
+    justify-content: center;
+  }
+  
+  .all{
+    background-color: #E6DCB7;
+    display: grid;
+  }
+  
+  .header{
+    margin-bottom: 50px;
+  }
+  
+.body{
+  display: flex;
+  justify-content: center;
+}
+
+.icon{
+  display: flex;
+  margin-top: 50px;
+}
+
+img{
+  width: 80px;
+}
+
+.btn{
+  margin-left: 30px;
+  width: 220px;
+  height: 100px;
+  left: 795px;
+  top: 420px;
+
+  text-align: center;
+
+  background: #96d6d2;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 48px;
+}
+
+.green{
+  margin-left: 30px;
+  width: 220px;
+  height: 100px;
+  left: 795px;
+  top: 420px;
+
+  text-align: center;
+
+  background: #cad9a7;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 48px;
+}
+
+.logo{
+  position: absolute;
+  left: 90%;
+  /* right: 8.61%; */
+  top: 83%;
+  /* bottom: 7.36%; */
+  width: 100px;
+}
