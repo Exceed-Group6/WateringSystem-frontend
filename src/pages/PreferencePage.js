@@ -54,6 +54,7 @@ function PreferencePage() {
                   placeholder='UID'
                   className='Id'
                   value={treeId}
+                  onChange={(e) => this.onTodoChange(e.target.value)}
                 ></input>
               </div>
               <div className='threemid'>
@@ -67,7 +68,7 @@ function PreferencePage() {
                     placeholder='Min'
                     className='Sunmin'
                     pattern='[0-9]*'
-                    value={tree?.base_light?.set[0]}
+                    defaultValue={tree?.base_light?.set[0]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -83,7 +84,7 @@ function PreferencePage() {
                     }
                     placeholder='Max'
                     className='Sunmax'
-                    value={tree?.base_light?.set[2]}
+                    defaultValue={tree?.base_light?.set[2]}
                   ></input>
                 </div>
                 <div className='waterInput'>
@@ -95,7 +96,7 @@ function PreferencePage() {
                     }
                     placeholder='Min'
                     className='Watermin'
-                    value={tree?.base_humidity?.set[0]}
+                    defaultValue={tree?.base_humidity?.set[0]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -103,7 +104,7 @@ function PreferencePage() {
                     }
                     placeholder='Mid'
                     className='Watermid'
-                    value={tree?.base_humidity?.set[1]}
+                    defaultValue={tree?.base_humidity?.set[1]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -111,7 +112,7 @@ function PreferencePage() {
                     }
                     placeholder='Max'
                     className='Watermax'
-                    value={tree?.base_humidity?.set[2]}
+                    defaultValue={tree?.base_humidity?.set[2]}
                   ></input>
                 </div>
                 <div className='tempInput'>
@@ -123,7 +124,7 @@ function PreferencePage() {
                     }
                     placeholder='Min'
                     className='Tempmin'
-                    value={tree?.base_temp?.set[0]}
+                    defaultValue={tree?.base_temp?.set[0]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -131,7 +132,7 @@ function PreferencePage() {
                     }
                     placeholder='Mid'
                     className='Tempmid'
-                    value={tree?.base_temp?.set[1]}
+                    defaultValue={tree?.base_temp?.set[1]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -139,7 +140,7 @@ function PreferencePage() {
                     }
                     placeholder='Max'
                     className='Tempmax'
-                    value={tree?.base_temp?.set[2]}
+                    defaultValue={tree?.base_temp?.set[2]}
                   ></input>
                 </div>
               </div>
@@ -156,13 +157,13 @@ function PreferencePage() {
               <textarea
                 placeholder='Name Tree'
                 className='nametree'
-                value={tree?.tree_name}
+                defaultValue={tree?.tree_name}
               ></textarea>
               <br></br>
               <textarea
                 placeholder='Discription...'
                 className='discription'
-                value={tree?.tree_desc}
+                defaultValue={tree?.tree_desc}
               ></textarea>
             </div>
           </div>
