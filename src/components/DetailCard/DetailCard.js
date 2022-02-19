@@ -5,16 +5,17 @@ import Segmentedbar from "../segmentedbar/Segmentedbar"
 import { deleteTree, getTreeById, manualWater } from "../../services/api"
 
 const DetailCard = ({ treeList, treeId }) => {
+  console.log(treeList)
   const [disabled, setDisable] = useState(false)
 
-  const sendData = (data) => {
+  const sendData = () => {
+    console.log(treeList.cur_bot_duration)
     setDisable(true)
     manualWater(treeId)
-    setTimeout(
-      () => setDisable(false),
-      treeList.duration ? treeList.duration : 0
-    )
+    setTimeout(() => setDisable(false), treeList.cur_bot_duration * 1000)
   }
+
+  // console.log(manualWater(treeId))
 
   let percentLight =
     ((treeList?.base_light?.current - treeList?.base_light?.set[0]) * 100) /
@@ -85,10 +86,12 @@ const DetailCard = ({ treeList, treeId }) => {
               <img src="./hourglass.png" alt="water"></img>
             </div>
             <div className="time-button">
-              {treeList.duration ? treeList.duration : 0} sec
+              <h3>{treeList.cur_bot_duration} sec</h3>
             </div>
             <button
-              className="watering-button"
+              className={
+                disabled ? "watering-button-gray" : "watering-button-blue"
+              }
               type="submit"
               onClick={sendData}
               disabled={disabled}

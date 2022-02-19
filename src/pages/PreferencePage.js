@@ -39,6 +39,7 @@ function PreferencePage() {
     // console.log(bot)
 
     let reqBody = {
+      tree_id: treeId,
       name: nametree,
       desc: dis,
       base_light: [sunmin, sunmid, sunmax],
@@ -47,8 +48,9 @@ function PreferencePage() {
       mode_status: bot,
       duration: dura,
     }
+    console.log(reqBody)
 
-    fetch("https://ecourse.cpe.ku.ac.th/exceed06/api/postnewtree", {
+    fetch("https://ecourse.cpe.ku.ac.th/exceed06/api/updatecommand", {
       method: "PUT",
       headers: { "Content-type": "application/json; charset=UTF-8" },
       body: JSON.stringify(reqBody),
@@ -89,7 +91,7 @@ function PreferencePage() {
                   onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
                   placeholder="Duration (sec)"
                   className="duration"
-                  defaultValue={tree.duration ? tree.duration : 0}
+                  defaultValue={tree.cur_bot_duration}
                   id="duration"
                 ></input>
               </div>
@@ -113,7 +115,7 @@ function PreferencePage() {
                     }
                     placeholder="Mid"
                     className="Sunmid"
-                    value={tree?.base_light?.set[1]}
+                    defaultValue={tree?.base_light?.set[1]}
                     id="Sunmid"
                   ></input>
                   <input
@@ -192,7 +194,11 @@ function PreferencePage() {
               <div className="botToggle">
                 <i class="fa-solid fa-robot fa-4x"></i>
                 <div className="switch">
-                  <Switch className="switch" isOn={value} />
+                  <Switch
+                    className="switch"
+                    isOn={value}
+                    handleToggle={() => setValue(!value)}
+                  />
                 </div>
               </div>
             </div>
