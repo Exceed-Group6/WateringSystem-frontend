@@ -19,7 +19,7 @@ const Detail = () => {
     onGetTreeById(treeId)
   }, [treeId])
 
-  console.log(tree)
+  // console.log(tree)
 
   return (
     <body className="Detail">
@@ -31,7 +31,7 @@ const Detail = () => {
       </nav>
       <div>
         {" "}
-        <DetailCard />
+        <DetailCard treeList={tree} />
       </div>
     </body>
   )
