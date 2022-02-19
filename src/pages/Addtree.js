@@ -4,11 +4,9 @@ import Switch from "../components/Switch"
 import "./Addtree.css"
 
 function Addtree() {
-  const [value, setValue] = useState(false)
+  const [botvalue, setbotValue] = useState(false)
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-
     let nametree = document.getElementById("nametree").value
     let dis = document.getElementById("discription").value
     let dura = document.getElementById("duration").value
@@ -21,8 +19,8 @@ function Addtree() {
     let tempmin = document.getElementById("Tempmin").value
     let tempmid = document.getElementById("Tempmid").value
     let tempmax = document.getElementById("Tempmax").value
-    let bot = document.getElementById("switch").value
-    // console.log(nametree)
+    let bot = botvalue
+    console.log(bot)
 
     let reqBody = {
       name: nametree,
@@ -75,6 +73,7 @@ function Addtree() {
                   onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
                   placeholder="Duration (sec)"
                   className="duration"
+                  id="duration"
                 ></input>
               </div>
               <div className="threemid">
@@ -165,12 +164,11 @@ function Addtree() {
               </div>
               <div className="botToggle">
                 <i class="fa-solid fa-robot fa-4x"></i>
-                <div className="switch">
+                <div className="switch" id="switch">
                   <Switch
                     className="switch"
-                    id="switch"
-                    isOn={value}
-                    handleToggle={() => setValue(!value)}
+                    isOn={botvalue}
+                    handleToggle={() => setbotValue(!botvalue)}
                   />
                 </div>
               </div>
