@@ -62,7 +62,7 @@ function PreferencePage() {
     <body>
       <nav className="sticky-top navbar navbar-expand-md navbar-light bg-success">
         <div className="back">
-          <Link to={`/Home`}>
+          <Link to={`/detail/${treeId}`}>
             <i class="fa-solid fa-angles-left fa-2x"></i>
           </Link>
         </div>
@@ -89,7 +89,7 @@ function PreferencePage() {
                   onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
                   placeholder="Duration (sec)"
                   className="duration"
-                  value={tree.duration ? tree.duration : 0}
+                  defaultValue={tree.duration ? tree.duration : 0}
                   id="duration"
                 ></input>
               </div>
@@ -104,8 +104,8 @@ function PreferencePage() {
                     placeholder="Min"
                     className="Sunmin"
                     pattern="[0-9]*"
-                    value={tree?.base_light?.set[0]}
                     id="Sunmin"
+                    defaultValue={tree?.base_light?.set[0]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -122,7 +122,7 @@ function PreferencePage() {
                     }
                     placeholder="Max"
                     className="Sunmax"
-                    value={tree?.base_light?.set[2]}
+                    defaultValue={tree?.base_light?.set[2]}
                     id="Sunmax"
                   ></input>
                 </div>
@@ -135,7 +135,7 @@ function PreferencePage() {
                     }
                     placeholder="Min"
                     className="Watermin"
-                    value={tree?.base_humidity?.set[0]}
+                    defaultValue={tree?.base_humidity?.set[0]}
                     id="Watermin"
                   ></input>
                   <input
@@ -144,7 +144,7 @@ function PreferencePage() {
                     }
                     placeholder="Mid"
                     className="Watermid"
-                    value={tree?.base_humidity?.set[1]}
+                    defaultValue={tree?.base_humidity?.set[1]}
                     id="Watermid"
                   ></input>
                   <input
@@ -153,7 +153,7 @@ function PreferencePage() {
                     }
                     placeholder="Max"
                     className="Watermax"
-                    value={tree?.base_humidity?.set[2]}
+                    defaultValue={tree?.base_humidity?.set[2]}
                     id="Watermax"
                   ></input>
                 </div>
@@ -166,7 +166,7 @@ function PreferencePage() {
                     }
                     placeholder="Min"
                     className="Tempmin"
-                    value={tree?.base_temp?.set[0]}
+                    defaultValue={tree?.base_temp?.set[0]}
                     id="Tempmin"
                   ></input>
                   <input
@@ -175,7 +175,7 @@ function PreferencePage() {
                     }
                     placeholder="Mid"
                     className="Tempmid"
-                    value={tree?.base_temp?.set[1]}
+                    defaultValue={tree?.base_temp?.set[1]}
                     id="Tempmid"
                   ></input>
                   <input
@@ -184,7 +184,7 @@ function PreferencePage() {
                     }
                     placeholder="Max"
                     className="Tempmax"
-                    value={tree?.base_temp?.set[2]}
+                    defaultValue={tree?.base_temp?.set[2]}
                     id="Tempmax"
                   ></input>
                 </div>
@@ -202,14 +202,14 @@ function PreferencePage() {
               <textarea
                 placeholder="Name Tree"
                 className="nametree"
-                value={tree?.tree_name}
+                defaultValue={tree?.tree_name}
                 id="nametree"
               ></textarea>
               <br></br>
               <textarea
                 placeholder="Discription..."
                 className="discription"
-                value={tree?.tree_desc}
+                defaultValue={tree?.tree_desc}
                 id="discription"
               ></textarea>
             </div>
