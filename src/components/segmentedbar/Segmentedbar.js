@@ -8,7 +8,8 @@ const Segmentedbar = ({ percentage }) => {
     position: "absolute",
     top: "0",
     left: `${percentage}%`,
-    opacity: "0.5",
+    opacity: "1",
+    margin: "5px 0 0 0",
   };
   return (
     <div>
@@ -29,11 +30,11 @@ const Segmentedbar = ({ percentage }) => {
         </div>
 
         <div id='bar-labels'>
-          <span class='seg1-label'>Lowest</span>
-          <span class='seg2-label'></span>
-          <span class='seg3-label'>Mid indicator</span>
-          <span class='seg4-label'></span>
-          <span class='seg5-label'>Highest</span>
+          <span class='seg1-label'>Very low</span>
+          <span class='seg2-label'>Low</span>
+          <span class='seg3-label'>Best</span>
+          <span class='seg4-label'>High</span>
+          <span class='seg5-label'>Very high</span>
         </div>
 
         <div id='score' style={myStyle} />
