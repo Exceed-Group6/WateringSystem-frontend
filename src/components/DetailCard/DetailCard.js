@@ -5,6 +5,16 @@ import Segmentedbar from "../segmentedbar/Segmentedbar";
 import { deleteTree, getTreeById } from "../../services/api";
 
 const DetailCard = ({ treeList }) => {
+  const percentLight =
+    ((treeList?.base_light?.current - treeList?.base_light?.set[0]) * 100) /
+    (treeList?.base_light?.set[2] - treeList?.base_light?.set[0]);
+  const percentHumid =
+    ((treeList?.base_humidity?.current - treeList?.base_humidity?.set[0]) *
+      100) /
+    (treeList?.base_humidity?.set[2] - treeList?.base_humidity?.set[0]);
+  const percentTemp =
+    ((treeList?.base_temp?.current - treeList?.base_temp?.set[0]) * 100) /
+    (treeList?.base_temp?.set[2] - treeList.base_temp?.set[0]);
   return (
     <div>
       <div className='container'>
@@ -30,12 +40,12 @@ const DetailCard = ({ treeList }) => {
             </div>
             <div className='container-right-progress'>
               <div class='w3-container'>
-                <Segmentedbar percentage='23' />
+                <Segmentedbar percentage={percentLight} />
 
                 <br></br>
-                <Segmentedbar percentage='63' />
+                <Segmentedbar percentage={percentHumid} />
                 <br></br>
-                <Segmentedbar percentage='80' />
+                <Segmentedbar percentage={percentTemp} />
               </div>
             </div>
           </div>
