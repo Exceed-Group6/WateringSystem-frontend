@@ -4,40 +4,22 @@ import { Link, useParams } from "react-router-dom"
 import { getTreeById } from "../../services/api"
 
 const DetailCard = ({ treeList }) => {
-  const { treeId } = useParams()
-
-  const [tree, setTree] = useState([])
-
-  const onGetTreeById = (id) => {
-    getTreeById(id).then((res) => {
-      setTree(res)
-      // console.log(res)
-    })
-  }
-
-  useEffect(() => {
-    onGetTreeById(treeId)
-  }, [treeId])
-
-  console.log(tree)
-  // console.log(tree.base_light.current)
-
   return (
-    <body>
+    <div>
       <div className="container">
         <div className="container-left">
           <img src="./tree.jpeg" alt="tree"></img>
           <div className="description">
             {/* <h3 color="gray">Description</h3> */}
-            <div>{tree.tree_desc}</div>
+            <div>{treeList.tree_desc}</div>
           </div>
         </div>
         <div class="d-flex justify-content-around">
           <div className="container-right">
             <div className="containter-right-text">
-              {/* <h2>{tree.base_light.current} Lux</h2> */}
-              {/* <h2>{treeList.base_humidity.current} %</h2> */}
-              {/* <h2>{treeList.base_temp.current}°c</h2> */}
+              <h2>{treeList?.base_light?.current} Lux</h2>
+              <h2>{treeList?.base_humidity?.current} %</h2>
+              <h2>{treeList?.base_temp?.current}°c</h2>
             </div>
 
             <div className="container-right-img">
@@ -93,7 +75,7 @@ const DetailCard = ({ treeList }) => {
           </div>
         </div>
       </div>
-    </body>
+    </div>
   )
 }
 

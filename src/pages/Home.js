@@ -5,18 +5,15 @@ import { Link } from "react-router-dom"
 import { getAllTree } from "../services/api"
 export const Home = () => {
   const [treeList, setTreeList] = useState([])
+  // const [toggle, setToggle] = useState(false)
+
+  // setToggle((prevState) => !prevState)
 
   useEffect(() => {
-    const count = setInterval(() => {
-      getAllTree().then((data) => {
-        setTreeList(data.result)
-      })
-      return () => {
-        clearInterval(count)
-      }
-    }, 1000)
+    getAllTree().then((data) => {
+      setTreeList(data.result)
+    })
   }, [])
-  // console.log(treeList.result)
 
   return (
     <div className="Home">
@@ -27,16 +24,12 @@ export const Home = () => {
         </div>
       </nav>
       <div className="Card-list">
-        {treeList.map(
-          (tree) => (
-            console.log(tree),
-            (
-              <Link to={`/detail/${tree.id}`} key={tree.id}>
-                <Card name={tree.name} />
-              </Link>
-            )
-          )
-        )}
+        {treeList.map((tree) => (
+          // console.log(tree),
+          <Link to={`/detail/${tree.id}`} key={tree.id}>
+            <Card name={tree.name} />
+          </Link>
+        ))}
       </div>
       <div className="Add-tree">
         <Link to={`/addTree`}>
