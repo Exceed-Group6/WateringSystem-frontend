@@ -1,22 +1,22 @@
-import React, { useState, useEffect } from "react";
-import Card from "../components/card/Card";
-import "./Home.css";
-import { Link } from "react-router-dom";
-import { getAllTree } from "../services/api";
+import React, { useState, useEffect } from "react"
+import Card from "../components/card/Card"
+import "./Home.css"
+import { Link } from "react-router-dom"
+import { getAllTree } from "../services/api"
 export const Home = () => {
-  const [treeList, setTreeList] = useState([]);
+  const [treeList, setTreeList] = useState([])
 
   useEffect(() => {
     const count = setInterval(() => {
       getAllTree().then((data) => {
-        setTreeList(data.result);
-      });
+        setTreeList(data.result)
+      })
       return () => {
-        clearInterval(count);
-      };
-    }, 1000);
-  }, []);
-  console.log(treeList.result);
+        clearInterval(count)
+      }
+    }, 1000)
+  }, [])
+  console.log(treeList.result)
 
   return (
     <div className="Home">
@@ -39,7 +39,7 @@ export const Home = () => {
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

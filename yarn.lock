@@ -7031,6 +7031,11 @@ react-motion@^0.5.2:
     prop-types "^15.5.8"
     raf "^3.1.0"
 
+react-native-segmented-progress-bar@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/react-native-segmented-progress-bar/-/react-native-segmented-progress-bar-1.0.10.tgz#9cd4362575e58e80696f0712af1fb93e90204547"
+  integrity sha512-Qgyr6yw64ak90spOqwfaYFagKWTGqjLT0B1SygtXcjvqxtK7GQ7qQ2N1MKDTZaypa+owpdNKgi3PkTMIkc98pw==
+
 react-refresh@^0.11.0:
   version "0.11.0"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.11.0.tgz#77198b944733f0f1f1a90e791de4541f9f074046"
