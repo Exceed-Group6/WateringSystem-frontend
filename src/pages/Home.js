@@ -29,7 +29,7 @@ export const Home = () => {
       <div className='Card-list'>
         {treeList.map((tree) => (
           <Link to={`/detail/${tree.id}`} key={tree.id}>
-            <Card id={tree.id} />
+            <Card id={tree.id} name={tree.name} />
           </Link>
         ))}
       </div>
