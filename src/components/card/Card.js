@@ -1,7 +1,7 @@
 import "./Card.css";
 import StatusBar from "./StatusBar";
 
-const Card = ({ id, name, light, humid, temp }) => {
+const Card = ({ name, light, humid, temp }) => {
   return (
     // <div className="Card">
     <div className='Card-body'>
