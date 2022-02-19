@@ -1,11 +1,21 @@
 import React, { useEffect, useState } from "react"
 import "./DetailCard.css"
 import { Link, useParams } from "react-router-dom"
-import { deleteTree, getTreeById } from "../../services/api"
+import { deleteTree, getTreeById, manualWater } from "../../services/api"
 
 const DetailCard = ({ treeList }) => {
   const Tree = useParams()
-  // console.log(Tree.treeId)
+
+  const [disabled, setDisable] = useState(false)
+
+  const sendData = (data) => {
+    setDisable(true)
+    manualWater(Tree.treeId)
+    setTimeout(
+      () => setDisable(false),
+      treeList.duration ? treeList.duration : 0
+    )
+  }
 
   return (
     <div>
@@ -52,8 +62,15 @@ const DetailCard = ({ treeList }) => {
             <div className="container-right-img2">
               <img src="./hourglass.png" alt="water"></img>
             </div>
-            <div className="time-button">10 Sec</div>
-            <button className="watering-button">
+            <div className="time-button">
+              {treeList.duration ? treeList.duration : 0} sec
+            </div>
+            <button
+              className="watering-button"
+              type="submit"
+              onClick={sendData}
+              disabled={disabled}
+            >
               <img src="./watering-plant.png" alt="watercan"></img>
             </button>
             <div className="container-right-progress"></div>

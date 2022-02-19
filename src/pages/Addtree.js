@@ -32,11 +32,11 @@ function Addtree() {
             <div className="inputBar">
               <div className="idInput">
                 {/* <i class="fa-solid fa-id-badge fa-4x"></i> */}
-                <img src="./Id.png" alt=""></img>
+                <img src="./hourglass.png" alt=""></img>
                 <input
                   onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
-                  placeholder="UID"
-                  className="Id"
+                  placeholder="Duration (sec)"
+                  className="duration"
                 ></input>
               </div>
               <div className="threemid">
