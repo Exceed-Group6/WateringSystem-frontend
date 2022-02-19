@@ -1,5 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #E6DCB7;
+  display: flex;
+  flex-direction: column;
+}
+
 .App {
   text-align: center;
+  background-color: #e7dcb7;
+}
+
+html {
+  background-color: #e7dcb7;
 }
 
 .App-logo {

@@ -1,0 +1,200 @@
+.p-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  /* text-align: center; */
+  /* box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2); */
+  /* display: grid; */
+  /* background-color: white; */
+  /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+}
+
+nav {
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  color: black;
+}
+
+a:hover {
+  color: #353535;
+}
+
+.back {
+  margin-left: 30px;
+}
+
+.name {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.picTree img {
+  height: 50px;
+  margin-right: auto;
+}
+
+.save {
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+.Header {
+  display: grid;
+}
+
+.Header i {
+  margin-top: 10px;
+  display: inline-block;
+  color: black;
+}
+
+.cardBack {
+  margin-top: 70px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: white;
+  display: grid;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  height: 700px;
+  width: 1200px;
+  border-radius: 30px;
+  overflow: hidden;
+  /* text-align: center; */
+}
+
+.inputBar {
+  background-color: white;
+}
+
+.discri {
+  background-color: white;
+}
+
+.discri img {
+  /* margin-left: 800px;
+  margin-top: 50px; */
+  background-color: white;
+  height: 300px;
+  width: 300px;
+}
+
+.nametree {
+  margin: 20px 0;
+  background-color: #ffe4e4;
+  outline: none;
+  border: 0;
+  padding: 10px;
+  border-radius: 20px;
+  height: 50px;
+  width: 300px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: large;
+}
+
+.discription {
+  margin: 0;
+  background-color: #f7fff5;
+  outline: none;
+  padding: 20px;
+  border: 0;
+  border-radius: 20px;
+  height: 200px;
+  width: 500px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.cardbody {
+  margin-top: 30px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+}
+
+.idInput img {
+  margin: 30px;
+  margin-left: 150px;
+  height: 70px;
+}
+
+.idInput input {
+  background-color: #dbf4ff;
+  outline: none;
+  border: 0;
+  margin: 30px 0;
+  margin-left: 20px;
+  border-radius: 20px;
+  height: 60px;
+  width: 250px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  font-size: x-large;
+}
+
+.botToggle {
+  display: flex;
+}
+
+.idInput {
+  display: flex;
+}
+
+.sunInput {
+  display: flex;
+}
+
+.waterInput {
+  display: flex;
+}
+
+.tempInput {
+  display: flex;
+}
+
+.botToggle i {
+  margin: 30px 80px;
+  margin-left: 180px;
+}
+
+.sunInput img {
+  margin: 20px;
+  margin-left: 40px;
+  height: 80px;
+}
+
+.waterInput img {
+  margin: 20px;
+  margin-left: 40px;
+  height: 80px;
+}
+
+.tempInput img {
+  margin: 20px;
+  margin-left: 40px;
+  height: 80px;
+}
+
+.threemid input {
+  background-color: #dbf4ff;
+  outline: none;
+  border: 0;
+  margin: 30px 10px;
+  /* margin-left: 20px; */
+  border-radius: 20px;
+  height: 60px;
+  width: 130px;
+  padding: 10px;
+  text-align: center;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+  font-size: x-large;
+}
+
+.switch {
+  margin-top: 20px;
+}
