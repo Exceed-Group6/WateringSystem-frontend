@@ -1,20 +1,49 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import "./DetailCard.css"
-import { Link, useParams } from "react-router-dom"
+import { Link } from "react-router-dom"
+import Segmentedbar from "../segmentedbar/Segmentedbar"
 import { deleteTree, getTreeById, manualWater } from "../../services/api"
 
-const DetailCard = ({ treeList }) => {
-  const Tree = useParams()
-
+const DetailCard = ({ treeList, treeId }) => {
   const [disabled, setDisable] = useState(false)
 
   const sendData = (data) => {
     setDisable(true)
-    manualWater(Tree.treeId)
+    manualWater(treeId)
     setTimeout(
       () => setDisable(false),
       treeList.duration ? treeList.duration : 0
     )
+  }
+
+  let percentLight =
+    ((treeList?.base_light?.current - treeList?.base_light?.set[0]) * 100) /
+    (treeList?.base_light?.set[2] - treeList?.base_light?.set[0])
+
+  let percentHumid =
+    ((treeList?.base_humidity?.current - treeList?.base_humidity?.set[0]) *
+      100) /
+    (treeList?.base_humidity?.set[2] - treeList?.base_humidity?.set[0])
+  let percentTemp =
+    ((treeList?.base_temp?.current - treeList?.base_temp?.set[0]) * 100) /
+    (treeList?.base_temp?.set[2] - treeList.base_temp?.set[0])
+
+  if (percentLight > 100) {
+    percentLight = 100
+  } else if (percentLight < 0) {
+    percentLight = 0
+  }
+
+  if (percentHumid > 100) {
+    percentHumid = 100
+  } else if (percentHumid < 0) {
+    percentHumid = 0
+  }
+
+  if (percentTemp > 100) {
+    percentTemp = 100
+  } else if (percentTemp < 0) {
+    percentTemp = 0
   }
 
   return (
@@ -42,19 +71,12 @@ const DetailCard = ({ treeList }) => {
             </div>
             <div className="container-right-progress">
               <div class="w3-container">
-                <div class="w3-light-grey">
-                  <div class="w3-green"></div>
-                </div>
-                <br></br>
+                <Segmentedbar percentage={percentLight} />
 
-                <div class="w3-light-grey">
-                  <div class="w3-blue"></div>
-                </div>
                 <br></br>
-
-                <div class="w3-light-grey">
-                  <div class="w3-red"></div>
-                </div>
+                <Segmentedbar percentage={percentHumid} />
+                <br></br>
+                <Segmentedbar percentage={percentTemp} />
               </div>
             </div>
           </div>
@@ -76,7 +98,11 @@ const DetailCard = ({ treeList }) => {
             <div className="container-right-progress"></div>
           </div>
           <div className="container-right">
-            <Link to={`/preference`} className="preference-button">
+            <Link
+              to={`/preference/${treeId}`}
+              key={treeId}
+              className="preference-button"
+            >
               Preference configuration
               <img className="pref-img" src="./edit.png" alt="edit"></img>
             </Link>
@@ -91,7 +117,7 @@ const DetailCard = ({ treeList }) => {
               <button
                 type="submit"
                 class="btn btn-danger"
-                onClick={() => deleteTree(Tree.treeId)}
+                onClick={() => deleteTree(treeId)}
               >
                 Delete this tree
               </button>

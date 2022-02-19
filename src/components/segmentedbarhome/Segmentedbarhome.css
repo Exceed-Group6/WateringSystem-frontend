@@ -1,0 +1,120 @@
+#home-bar {
+  width: 200px;
+  height: 10px;
+  background: #eee;
+}
+
+#bar-labels > span {
+  box-sizing: border-box;
+  float: left;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+/* #home-score {
+  width: 4px;
+  background: black;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 62%;
+  opacity: 0.5;
+} */
+
+#home-bar-container {
+  width: 200px;
+  height: 20px;
+  padding: 5px 0 15px 0;
+  position: relative;
+  box-sizing: border-box;
+}
+
+/* standard unit to incremenet is 4 for 1% */
+.home-seg1 {
+  _display: inline-block;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  background: #b2ebff;
+  font-size: 10px;
+}
+
+.home-seg2 {
+  _display: inline-block;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  background-color: deepskyblue;
+  font-size: 10px;
+}
+
+.home-seg3 {
+  _display: inline-block;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  background-color: #26be41;
+  font-size: 10px;
+}
+
+.home-seg4 {
+  _display: inline-block;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  background-color: yellow;
+  font-size: 10px;
+}
+
+.home-seg5 {
+  _display: inline-block;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  background-color: orangered;
+  font-size: 10px;
+}
+
+#home-bar > span {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 400;
+}
+
+/* .home-seg1-label {
+  width: 15%;
+  display: inline-block;
+  text-align: center;
+  border-left: 1px solid #ccc;
+}
+
+.home-seg2-label {
+  width: 25%;
+  display: inline-block;
+  text-align: center;
+}
+
+.home-seg3-label {
+  width: 10%;
+  display: inline-block;
+  text-align: center;
+}
+
+.home-seg4-label {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+
+.home-seg5-label {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+} */

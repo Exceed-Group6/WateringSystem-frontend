@@ -1,10 +1,26 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
+
 import Switch from "../components/Switch"
 import "./PreferencePage.css"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
+import { getTreeById } from "../services/api"
 
 function PreferencePage() {
   const [value, setValue] = useState(false)
+  const { treeId } = useParams()
+
+  const [tree, setTree] = useState({})
+
+  const onGetTreeById = (id) => {
+    getTreeById(id).then((res) => {
+      setTree(res)
+    })
+  }
+
+  useEffect(() => {
+    onGetTreeById(treeId)
+    setValue(!tree.cur_bot_status)
+  }, [])
 
   return (
     <body>
@@ -15,7 +31,7 @@ function PreferencePage() {
           </Link>
         </div>
         <div className="name">
-          <h1>Preference Tree</h1>
+          <h1>Preference : {tree.tree_name}</h1>
         </div>
         <div className="picTree">
           <img src="./Setting.png" alt=""></img>
@@ -37,6 +53,7 @@ function PreferencePage() {
                   onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
                   placeholder="Duration (sec)"
                   className="duration"
+                  value={tree.duration ? tree.duration : 0}
                 ></input>
               </div>
               <div className="threemid">
@@ -50,6 +67,7 @@ function PreferencePage() {
                     placeholder="Min"
                     className="Sunmin"
                     pattern="[0-9]*"
+                    value={tree?.base_light?.set[0]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -57,6 +75,7 @@ function PreferencePage() {
                     }
                     placeholder="Mid"
                     className="Sunmid"
+                    value={tree?.base_light?.set[1]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -64,6 +83,7 @@ function PreferencePage() {
                     }
                     placeholder="Max"
                     className="Sunmax"
+                    value={tree?.base_light?.set[2]}
                   ></input>
                 </div>
                 <div className="waterInput">
@@ -75,6 +95,7 @@ function PreferencePage() {
                     }
                     placeholder="Min"
                     className="Watermin"
+                    value={tree?.base_humidity?.set[0]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -82,6 +103,7 @@ function PreferencePage() {
                     }
                     placeholder="Mid"
                     className="Watermid"
+                    value={tree?.base_humidity?.set[1]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -89,6 +111,7 @@ function PreferencePage() {
                     }
                     placeholder="Max"
                     className="Watermax"
+                    value={tree?.base_humidity?.set[2]}
                   ></input>
                 </div>
                 <div className="tempInput">
@@ -100,6 +123,7 @@ function PreferencePage() {
                     }
                     placeholder="Min"
                     className="Tempmin"
+                    value={tree?.base_temp?.set[0]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -107,6 +131,7 @@ function PreferencePage() {
                     }
                     placeholder="Mid"
                     className="Tempmid"
+                    value={tree?.base_temp?.set[1]}
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -114,28 +139,30 @@ function PreferencePage() {
                     }
                     placeholder="Max"
                     className="Tempmax"
+                    value={tree?.base_temp?.set[2]}
                   ></input>
                 </div>
               </div>
               <div className="botToggle">
                 <i class="fa-solid fa-robot fa-4x"></i>
                 <div className="switch">
-                  <Switch
-                    className="switch"
-                    isOn={value}
-                    handleToggle={() => setValue(!value)}
-                  />
+                  <Switch className="switch" isOn={value} />
                 </div>
               </div>
             </div>
             <div className="discri">
               <img src="./tree.png" alt=""></img>
               <br></br>
-              <textarea placeholder="Name Tree" className="nametree"></textarea>
+              <textarea
+                placeholder="Name Tree"
+                className="nametree"
+                value={tree?.tree_name}
+              ></textarea>
               <br></br>
               <textarea
                 placeholder="Discription..."
                 className="discription"
+                value={tree?.tree_desc}
               ></textarea>
             </div>
           </div>
