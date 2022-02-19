@@ -32,7 +32,7 @@
 /* standard unit to incremenet is 4 for 1% */
 .home-seg1 {
   _display: inline-block;
-  width: 15%;
+  width: 20%;
   height: 100%;
   box-sizing: border-box;
   float: left;
