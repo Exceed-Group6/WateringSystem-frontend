@@ -30,15 +30,14 @@ function PreferencePage() {
         <div className="cardBack">
           <div className="cardbody">
             <div className="inputBar">
-              <div className="idInput">
-                {/* <i class="fa-solid fa-id-badge fa-4x"></i> */}
+              {/* <div className="idInput">
                 <img src="./Id.png" alt=""></img>
                 <input
                   onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
                   placeholder="UID"
                   className="Id"
                 ></input>
-              </div>
+              </div> */}
               <div className="threemid">
                 <div className="sunInput">
                   {/* <i class="fa-solid fa-sun fa-4x"></i> */}

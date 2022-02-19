@@ -6,6 +6,44 @@ import "./Addtree.css"
 function Addtree() {
   const [value, setValue] = useState(false)
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    let nametree = document.getElementById("nametree").value
+    let dis = document.getElementById("discription").value
+    let dura = document.getElementById("duration").value
+    let sunmin = document.getElementById("Sunmin").value
+    let sunmid = document.getElementById("Sunmid").value
+    let sunmax = document.getElementById("Sunmax").value
+    let watermin = document.getElementById("Watermin").value
+    let watermid = document.getElementById("Watermid").value
+    let watermax = document.getElementById("Watermax").value
+    let tempmin = document.getElementById("Tempmin").value
+    let tempmid = document.getElementById("Tempmid").value
+    let tempmax = document.getElementById("Tempmax").value
+    let bot = document.getElementById("switch").value
+    // console.log(nametree)
+
+    let reqBody = {
+      name: nametree,
+      desc: dis,
+      base_light: [sunmin, sunmid, sunmax],
+      base_humidity: [watermin, watermid, watermax],
+      base_temp: [tempmin, tempmid, tempmax],
+      mode_status: bot,
+      duration: dura,
+    }
+
+    fetch("https://ecourse.cpe.ku.ac.th/exceed06/api/postnewtree", {
+      method: "POST",
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+      body: JSON.stringify(reqBody),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err))
+  }
+
   return (
     <body>
       <nav className="sticky-top navbar navbar-expand-md navbar-light bg-success">
@@ -21,24 +59,23 @@ function Addtree() {
           <img src="./Addtree.png" alt=""></img>
         </div>
         <div className="save">
-          <a href="https://www.youtube.com">
-            <i class="fa-solid fa-floppy-disk fa-2x"></i>
-          </a>
+          <Link to={`/Home`}>
+            <i class="fa-solid fa-floppy-disk fa-2x" onClick={handleSubmit}></i>
+          </Link>
         </div>
       </nav>
       <div className="a-container">
         <div className="cardBack">
           <div className="cardbody">
             <div className="inputBar">
-              <div className="idInput">
-                {/* <i class="fa-solid fa-id-badge fa-4x"></i> */}
+              {/* <div className="idInput">
                 <img src="./Id.png" alt=""></img>
                 <input
                   onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
                   placeholder="UID"
                   className="Id"
                 ></input>
-              </div>
+              </div> */}
               <div className="threemid">
                 <div className="sunInput">
                   {/* <i class="fa-solid fa-sun fa-4x"></i> */}
@@ -49,6 +86,7 @@ function Addtree() {
                     }
                     placeholder="Min"
                     className="Sunmin"
+                    id="Sunmin"
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -56,6 +94,7 @@ function Addtree() {
                     }
                     placeholder="Mid"
                     className="Sunmid"
+                    id="Sunmid"
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -63,6 +102,7 @@ function Addtree() {
                     }
                     placeholder="Max"
                     className="Sunmax"
+                    id="Sunmax"
                   ></input>
                 </div>
                 <div className="waterInput">
@@ -74,6 +114,7 @@ function Addtree() {
                     }
                     placeholder="Min"
                     className="Watermin"
+                    id="Watermin"
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -81,6 +122,7 @@ function Addtree() {
                     }
                     placeholder="Mid"
                     className="Watermid"
+                    id="Watermid"
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -88,6 +130,7 @@ function Addtree() {
                     }
                     placeholder="Max"
                     className="Watermax"
+                    id="Watermax"
                   ></input>
                 </div>
                 <div className="tempInput">
@@ -99,6 +142,7 @@ function Addtree() {
                     }
                     placeholder="Min"
                     className="Tempmin"
+                    id="Tempmin"
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -106,6 +150,7 @@ function Addtree() {
                     }
                     placeholder="Mid"
                     className="Tempmid"
+                    id="Tempmid"
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -113,6 +158,7 @@ function Addtree() {
                     }
                     placeholder="Max"
                     className="Tempmax"
+                    id="Tempmax"
                   ></input>
                 </div>
               </div>
@@ -121,6 +167,7 @@ function Addtree() {
                 <div className="switch">
                   <Switch
                     className="switch"
+                    id="switch"
                     isOn={value}
                     handleToggle={() => setValue(!value)}
                   />
@@ -130,11 +177,16 @@ function Addtree() {
             <div className="discri">
               <img src="./tree.png" alt=""></img>
               <br></br>
-              <textarea placeholder="Name Tree" className="nametree"></textarea>
+              <textarea
+                placeholder="Name Tree"
+                className="nametree"
+                id="nametree"
+              ></textarea>
               <br></br>
               <textarea
                 placeholder="Discription..."
                 className="discription"
+                id="discription"
               ></textarea>
             </div>
           </div>
