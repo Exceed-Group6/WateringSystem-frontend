@@ -147,7 +147,11 @@ function PreferencePage() {
               <div className='botToggle'>
                 <i class='fa-solid fa-robot fa-4x'></i>
                 <div className='switch'>
-                  <Switch className='switch' isOn={value} />
+                  <Switch
+                    className='switch'
+                    isOn={value}
+                    handleToggle={() => setValue(!value)}
+                  />
                 </div>
               </div>
             </div>
