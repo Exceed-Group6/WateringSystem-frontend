@@ -4,6 +4,9 @@ import { Link, useParams } from "react-router-dom"
 import { deleteTree, getTreeById } from "../../services/api"
 
 const DetailCard = ({ treeList }) => {
+  const Tree = useParams()
+  // console.log(Tree.treeId)
+
   return (
     <div>
       <div className="container">
@@ -68,7 +71,11 @@ const DetailCard = ({ treeList }) => {
               </p>
             </a>
             <Link to={`/home`}>
-              <button type="button" class="btn btn-danger" id="delTree">
+              <button
+                type="submit"
+                class="btn btn-danger"
+                onClick={() => deleteTree(Tree.treeId)}
+              >
                 Delete this tree
               </button>
             </Link>
