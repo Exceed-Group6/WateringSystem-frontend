@@ -5,8 +5,17 @@ import { deleteTree, getTreeById, manualWater } from "../../services/api"
 
 const DetailCard = ({ treeList }) => {
   const Tree = useParams()
-  // console.log(Tree.treeId)
-  // console.log(manualWater(Tree.treeId))
+
+  const [disabled, setDisable] = useState(false)
+
+  const sendData = (data) => {
+    setDisable(true)
+    manualWater(Tree.treeId)
+    setTimeout(
+      () => setDisable(false),
+      treeList.duration ? treeList.duration : 0
+    )
+  }
 
   return (
     <div>
@@ -53,13 +62,16 @@ const DetailCard = ({ treeList }) => {
             <div className="container-right-img2">
               <img src="./hourglass.png" alt="water"></img>
             </div>
-            <div className="time-button">{treeList.duration || 0} Sec</div>
-            <button className="watering-button">
-              <img
-                src="./watering-plant.png"
-                alt="watercan"
-                onClick={() => manualWater(Tree.treeId)}
-              ></img>
+            <div className="time-button">
+              {treeList.duration ? treeList.duration : 0} sec
+            </div>
+            <button
+              className="watering-button"
+              type="submit"
+              onClick={sendData}
+              disabled={disabled}
+            >
+              <img src="./watering-plant.png" alt="watercan"></img>
             </button>
             <div className="container-right-progress"></div>
           </div>
