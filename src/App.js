@@ -3,7 +3,7 @@ import Addtree from "./pages/Addtree";
 import PreferencePage from "./pages/PreferencePage";
 import Detail from "./pages/Detail/Detail";
 import Home from "./pages/Home";
-// import DetailCard from "./components/DetailCard/DetailCard";
+// import { Route, Routes } from "react-router-dom";
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import GraphPage from './pages/GraphPage';
@@ -14,16 +14,18 @@ import GraphPage from './pages/GraphPage';
 
 function App() {
   return (
-    <div className="App">
-      {/* <h1>App</h1> */}
-    <BrowserRouter>
+    <div className='App'>
+      {/* <Detail></Detail> */}
       <Routes>
-        <Route path='/graph' element={<GraphPage />}  />
-        <Route path='/home' element={<Home />}  />
-        <Route path='/preference' element={<PreferencePage />}  />
+        <Route path='/home' element={<Home />}></Route>
+        <Route path='/addTree' element={<Addtree />}></Route>
+        <Route path='/detail' element={<Detail />}></Route>
+        <Route path='/detail/:treeId' element={<Detail />}></Route>
+        <Route path='/preference/' element={<PreferencePage />}></Route>
+        <Route path='/preference/:treeId' element={<PreferencePage />}></Route>
+        <Route path='*' element={<Home />}></Route>
+        <Route path='/graph/:treeId' element={<GraphPage />}  />
       </Routes>
-    </BrowserRouter>
-    
     </div>
   );
 }

@@ -1,26 +1,26 @@
 import React, { Component } from 'react';
 import CanvasJSReact from '../assets/canvasjs.react';
 import { useEffect, useState } from "react"
-import { getTreeById, getwater } from "../services/api"
+import { getlight, getTreeById} from "../services/api"
 import { Link, useParams } from "react-router-dom"
 
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const LineChart = () => {
+const LineChartLight = () => {
 	// render() {
 
 		const { treeId } = useParams()
 
 		const [tree, setTree] = useState({})
 	  
-		const onGetTreeWater = (id) => {
-		  getwater(id).then((res) => {
+		const onGetTreeLight = (id) => {
+		  getlight(id).then((res) => {
 			setTree(res)
 		  })
 		}
 	  
 		useEffect(() => {
-		  onGetTreeWater(treeId)
+		  onGetTreeLight(treeId)
 		}, [])
 
 		console.log(tree)
@@ -60,4 +60,4 @@ const LineChart = () => {
 	// }
 }
 
-export default LineChart;                           
+export default LineChartLight;                           

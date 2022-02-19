@@ -1,17 +1,18 @@
-import React, { useState } from "react";
-import Switch from "../components/Switch";
-import "./Addtree.css";
+import React, { useState } from "react"
+import { Link } from "react-router-dom"
+import Switch from "../components/Switch"
+import "./Addtree.css"
 
 function Addtree() {
-  const [value, setValue] = useState(false);
+  const [value, setValue] = useState(false)
 
   return (
     <body>
       <nav className="sticky-top navbar navbar-expand-md navbar-light bg-success">
         <div className="back">
-          <a href="https://www.apple.com/th/">
+          <Link to={`/Home`}>
             <i class="fa-solid fa-angles-left fa-2x"></i>
-          </a>
+          </Link>
         </div>
         <div className="name">
           <h1>Add Tree</h1>
@@ -32,29 +33,87 @@ function Addtree() {
               <div className="idInput">
                 {/* <i class="fa-solid fa-id-badge fa-4x"></i> */}
                 <img src="./Id.png" alt=""></img>
-                <input placeholder="UID" className="Id"></input>
+                <input
+                  onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
+                  placeholder="UID"
+                  className="Id"
+                ></input>
               </div>
               <div className="threemid">
                 <div className="sunInput">
                   {/* <i class="fa-solid fa-sun fa-4x"></i> */}
                   <img src="./Sun.png" alt=""></img>
-                  <input placeholder="Min" className="Sunmin"></input>
-                  <input placeholder="Mid" className="Sunmid"></input>
-                  <input placeholder="Max" className="Sunmax"></input>
+                  <input
+                    onKeyPress={(e) =>
+                      !/[0-9]/.test(e.key) && e.preventDefault()
+                    }
+                    placeholder="Min"
+                    className="Sunmin"
+                  ></input>
+                  <input
+                    onKeyPress={(e) =>
+                      !/[0-9]/.test(e.key) && e.preventDefault()
+                    }
+                    placeholder="Mid"
+                    className="Sunmid"
+                  ></input>
+                  <input
+                    onKeyPress={(e) =>
+                      !/[0-9]/.test(e.key) && e.preventDefault()
+                    }
+                    placeholder="Max"
+                    className="Sunmax"
+                  ></input>
                 </div>
                 <div className="waterInput">
                   {/* <i class="fa-solid fa-droplet fa-4x"></i> */}
                   <img src="./Water.png" alt=""></img>
-                  <input placeholder="Min" className="Watermin"></input>
-                  <input placeholder="Mid" className="Watermid"></input>
-                  <input placeholder="Max" className="Watermax"></input>
+                  <input
+                    onKeyPress={(e) =>
+                      !/[0-9]/.test(e.key) && e.preventDefault()
+                    }
+                    placeholder="Min"
+                    className="Watermin"
+                  ></input>
+                  <input
+                    onKeyPress={(e) =>
+                      !/[0-9]/.test(e.key) && e.preventDefault()
+                    }
+                    placeholder="Mid"
+                    className="Watermid"
+                  ></input>
+                  <input
+                    onKeyPress={(e) =>
+                      !/[0-9]/.test(e.key) && e.preventDefault()
+                    }
+                    placeholder="Max"
+                    className="Watermax"
+                  ></input>
                 </div>
                 <div className="tempInput">
                   {/* <i class="fa-solid fa-temperature-quarter fa-4x"></i> */}
                   <img src="./Temp.png" alt=""></img>
-                  <input placeholder="Min" className="Tempmin"></input>
-                  <input placeholder="Mid" className="Tempmid"></input>
-                  <input placeholder="Max" className="Tempmax"></input>
+                  <input
+                    onKeyPress={(e) =>
+                      !/[0-9]/.test(e.key) && e.preventDefault()
+                    }
+                    placeholder="Min"
+                    className="Tempmin"
+                  ></input>
+                  <input
+                    onKeyPress={(e) =>
+                      !/[0-9]/.test(e.key) && e.preventDefault()
+                    }
+                    placeholder="Mid"
+                    className="Tempmid"
+                  ></input>
+                  <input
+                    onKeyPress={(e) =>
+                      !/[0-9]/.test(e.key) && e.preventDefault()
+                    }
+                    placeholder="Max"
+                    className="Tempmax"
+                  ></input>
                 </div>
               </div>
               <div className="botToggle">
@@ -82,7 +141,7 @@ function Addtree() {
         </div>
       </div>
     </body>
-  );
+  )
 }
 
-export default Addtree;
+export default Addtree

@@ -1,0 +1,146 @@
+#bar-details {
+  width: 600px;
+  height: 20px;
+  margin-bottom: 2px;
+}
+
+#bar-details > span {
+  _padding: 2px;
+  _border: 1px solid #ccc;
+}
+
+.det1 {
+  width: 15%;
+  height: 100%;
+  float: left;
+  display: inline-block;
+  text-align: right;
+  color: #ccc;
+  overflow: hidden;
+}
+
+#bar {
+  width: 600px;
+  height: 40px;
+  background: #eee;
+  _border: 1px solid black;
+}
+
+#bar-labels {
+  width: 600px;
+  height: 20px;
+  font-size: 10px;
+  _border: 1px solid black;
+}
+
+#bar-labels > span {
+  box-sizing: border-box;
+  float: left;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+/* #score {
+  width: 4px;
+  background: black;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 62%;
+  opacity: 0.5;
+} */
+
+#bar-container {
+  width: 600px;
+  height: 64px;
+  padding: 10px 0 10px 0;
+  position: relative;
+  box-sizing: border-box;
+
+  /* border: 1px solid #666; */
+}
+
+/* standard unit to incremenet is 4 for 1% */
+.seg1 {
+  _display: inline-block;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  background: #b2ebff;
+}
+
+.seg2 {
+  _display: inline-block;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  background-color: deepskyblue;
+}
+
+.seg3 {
+  _display: inline-block;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  background-color: #26be41;
+}
+
+.seg4 {
+  _display: inline-block;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  background-color: yellow;
+}
+
+.seg5 {
+  _display: inline-block;
+  width: 20%;
+  height: 100%;
+  box-sizing: border-box;
+  float: left;
+  background-color: orangered;
+}
+
+#bar > span {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 400;
+}
+
+.seg1-label {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+  border-left: 1px solid #ccc;
+}
+
+.seg2-label {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+
+.seg3-label {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+
+.seg4-label {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
+
+.seg5-label {
+  width: 20%;
+  display: inline-block;
+  text-align: center;
+}
