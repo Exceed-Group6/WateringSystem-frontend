@@ -26,7 +26,7 @@ function PreferencePage() {
     <body>
       <nav className='sticky-top navbar navbar-expand-md navbar-light bg-success'>
         <div className='back'>
-          <Link to={`/Home`}>
+          <Link to={`/detail/${treeId}`}>
             <i class='fa-solid fa-angles-left fa-2x'></i>
           </Link>
         </div>
