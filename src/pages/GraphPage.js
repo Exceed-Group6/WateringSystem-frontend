@@ -25,9 +25,9 @@ class GraphPage extends Component {
 				<div className='card'>
 					<LineChart />
 					<div className='icon'>
-						<button className='btn'><img src={sunlogo} alt='sun'></img></button>
-						<button className='btn green'><img src={wtrlogo} alt='sun'></img></button>
-						<button className='btn'><img src={tmplogo} alt='sun'></img></button>
+						<button className='btn'><img src={sunlogo} alt='sun' className='img'></img></button>
+						<button className='btn green'><img src={wtrlogo} alt='wtr' className='img'></img></button>
+						<button className='btn'><img src={tmplogo} alt='tmp' className='img'></img></button>
 					</div>
 					<img src={logo} alt='logo' className='logo' ></img>
 				</div>
