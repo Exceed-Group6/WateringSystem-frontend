@@ -19,9 +19,9 @@ function App() {
       <Routes>
         <Route path='/home' element={<Home />}></Route>
         <Route path='/addTree' element={<Addtree />}></Route>
-        <Route path='/detail' element={<Detail />}></Route>
+
         <Route path='/detail/:treeId' element={<Detail />}></Route>
-        <Route path='/preference/' element={<PreferencePage />}></Route>
+
         <Route path='/preference/:treeId' element={<PreferencePage />}></Route>
         <Route path='*' element={<Home />}></Route>
         <Route path='/graph/:treeId' element={<GraphPage />}  />

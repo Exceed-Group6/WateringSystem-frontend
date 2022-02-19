@@ -39,9 +39,9 @@ const GraphPage = () => {
 					
 					
 					<div className='icon'>
-						<button className={`${charttype===1 ? 'green' : 'btn'}`} onClick={ () => {setCharttype(1)} } ><img src={sunlogo} alt='sun' className='img'></img></button>
-						<button className={`${charttype===2 ? 'green' : 'btn'}`} onClick={ () => {setCharttype(2)} } ><img src={wtrlogo} alt='wtr' className='img'></img></button>
-						<button className={`${charttype===3 ? 'green' : 'btn'}`} onClick={ () => {setCharttype(3)} } ><img src={tmplogo} alt='tmp' className='img'></img></button>
+						<button className={`${charttype===1 ? 'green' : 'btnch'}`} onClick={ () => {setCharttype(1)} } ><img src={sunlogo} alt='sun' className='img'></img></button>
+						<button className={`${charttype===2 ? 'green' : 'btnch'}`} onClick={ () => {setCharttype(2)} } ><img src={wtrlogo} alt='wtr' className='img'></img></button>
+						<button className={`${charttype===3 ? 'green' : 'btnch'}`} onClick={ () => {setCharttype(3)} } ><img src={tmplogo} alt='tmp' className='img'></img></button>
 					</div>
 					<img src={logo} alt='logo' className='logo' ></img>
 				</div>

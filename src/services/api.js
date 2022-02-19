@@ -44,7 +44,7 @@ export const manualWater = async (treeId) => {
 export const getwater = async (treeId) => {
   const response = await axios.get(
     ` https://ecourse.cpe.ku.ac.th/exceed06/api/getrecordwater/${treeId}`
-  );
+  )
   return response.data;
 };
 
