@@ -36,7 +36,7 @@
   height: 100%;
   box-sizing: border-box;
   float: left;
-  background: red;
+  background: #b2ebff;
   font-size: 10px;
 }
 
@@ -46,7 +46,7 @@
   height: 100%;
   box-sizing: border-box;
   float: left;
-  background-color: orangered;
+  background-color: deepskyblue;
   font-size: 10px;
 }
 
@@ -56,7 +56,7 @@
   height: 100%;
   box-sizing: border-box;
   float: left;
-  background-color: orange;
+  background-color: #26be41;
   font-size: 10px;
 }
 
@@ -76,7 +76,7 @@
   height: 100%;
   box-sizing: border-box;
   float: left;
-  background-color: green;
+  background-color: orangered;
   font-size: 10px;
 }
 
