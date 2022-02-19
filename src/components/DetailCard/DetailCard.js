@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import "./DetailCard.css"
 import { Link, useParams } from "react-router-dom"
-import { getTreeById } from "../../services/api"
+import { deleteTree, getTreeById } from "../../services/api"
 
 const DetailCard = ({ treeList }) => {
   const { treeId } = useParams()
@@ -16,11 +16,11 @@ const DetailCard = ({ treeList }) => {
   }
 
   useEffect(() => {
-    onGetTreeById(treeId)
-  }, [treeId])
+    onGetTreeById(tree.id)
+  })
 
-  console.log(tree)
-  // console.log(tree.base_light.current)
+  console.log(treeList)
+  // console.log(tree.base_light)
 
   return (
     <body>
@@ -29,15 +29,15 @@ const DetailCard = ({ treeList }) => {
           <img src="./tree.jpeg" alt="tree"></img>
           <div className="description">
             {/* <h3 color="gray">Description</h3> */}
-            <div>{tree.tree_desc}</div>
+            <div>{treeList.tree_desc}</div>
           </div>
         </div>
         <div class="d-flex justify-content-around">
           <div className="container-right">
             <div className="containter-right-text">
-              {/* <h2>{tree.base_light.current} Lux</h2> */}
-              {/* <h2>{treeList.base_humidity.current} %</h2> */}
-              {/* <h2>{treeList.base_temp.current}°c</h2> */}
+              {/* <h2>{treeList.base_light.current}</h2> */}
+              {/* <h2>{tree.base_humidity.current} %</h2> */}
+              {/* <h2>{tree.base_temp.current}°c</h2> */}
             </div>
 
             <div className="container-right-img">
@@ -86,9 +86,14 @@ const DetailCard = ({ treeList }) => {
               </p>
             </a>
             <Link to={`/home`}>
-              <button type="button" class="btn btn-danger">
+              <button type="button" class="btn btn-danger" id="delTree">
                 Delete this tree
               </button>
+              <script>
+                var btn = document.getElementById("delTree");
+                btn.addEventListener(“click”, delTree) function delTree()
+                {deleteTree(treeId)}
+              </script>
             </Link>
           </div>
         </div>

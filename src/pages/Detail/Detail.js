@@ -30,7 +30,7 @@ const Detail = () => {
         <h1 className="title">{tree.tree_name}</h1>
       </nav>
       <div>
-        {" "}
+        {/* {" "} */}
         <DetailCard treeList={tree} />
       </div>
     </body>

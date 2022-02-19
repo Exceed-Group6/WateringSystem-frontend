@@ -27,16 +27,12 @@ export const Home = () => {
         </div>
       </nav>
       <div className="Card-list">
-        {treeList.map(
-          (tree) => (
-            console.log(tree),
-            (
-              <Link to={`/detail/${tree.id}`} key={tree.id}>
-                <Card name={tree.name} />
-              </Link>
-            )
-          )
-        )}
+        {treeList.map((tree) => (
+          // console.log(tree),
+          <Link to={`/detail/${tree.id}`} key={tree.id}>
+            <Card name={tree.name} />
+          </Link>
+        ))}
       </div>
       <div className="Add-tree">
         <Link to={`/addTree`}>
