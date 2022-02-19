@@ -16,7 +16,7 @@ const Segmentedbar = ({ percentage, scale }) => {
     height: "100%",
     boxSizing: "border-box",
     float: "left",
-    backgroundColor: "gray",
+    backgroundColor: "lightgray",
   };
   const myStyle2 = {
     _display: "inline-block",
@@ -24,7 +24,7 @@ const Segmentedbar = ({ percentage, scale }) => {
     height: "100%",
     boxSizing: "border-box",
     float: "left",
-    backgroundColor: "gray",
+    backgroundColor: "lightgray",
   };
   return (
     <div>
