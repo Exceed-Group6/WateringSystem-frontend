@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
 import "./DetailCard.css"
 import { Link, useParams } from "react-router-dom"
-import { getTreeById } from "../../services/api"
+import { deleteTree, getTreeById } from "../../services/api"
 
 const DetailCard = ({ treeList }) => {
   return (
@@ -68,7 +68,7 @@ const DetailCard = ({ treeList }) => {
               </p>
             </a>
             <Link to={`/home`}>
-              <button type="button" class="btn btn-danger">
+              <button type="button" class="btn btn-danger" id="delTree">
                 Delete this tree
               </button>
             </Link>
