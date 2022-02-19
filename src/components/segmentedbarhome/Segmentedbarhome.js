@@ -8,7 +8,7 @@ const Segmentedbarhome = ({ percentage }) => {
     position: "absolute",
     top: "0",
     left: `${percentage}%`,
-    opacity: "0.5",
+    opacity: "1",
   };
   return (
     <div id='home-bar-container'>
