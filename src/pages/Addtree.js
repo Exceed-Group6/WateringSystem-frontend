@@ -6,7 +6,7 @@ import "./Addtree.css"
 function Addtree() {
   const [botvalue, setbotValue] = useState(false)
 
-  const handleSubmit = (e) => {
+  const handleSubmit = () => {
     let nametree = document.getElementById("nametree").value
     let dis = document.getElementById("discription").value
     let dura = document.getElementById("duration").value

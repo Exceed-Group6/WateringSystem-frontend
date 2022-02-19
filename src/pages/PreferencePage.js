@@ -6,6 +6,42 @@ import { Link } from "react-router-dom"
 function PreferencePage() {
   const [value, setValue] = useState(false)
 
+  const handleSubmit = () => {
+    let nametree = document.getElementById("nametree").value
+    let dis = document.getElementById("discription").value
+    let dura = document.getElementById("duration").value
+    let sunmin = document.getElementById("Sunmin").value
+    let sunmid = document.getElementById("Sunmid").value
+    let sunmax = document.getElementById("Sunmax").value
+    let watermin = document.getElementById("Watermin").value
+    let watermid = document.getElementById("Watermid").value
+    let watermax = document.getElementById("Watermax").value
+    let tempmin = document.getElementById("Tempmin").value
+    let tempmid = document.getElementById("Tempmid").value
+    let tempmax = document.getElementById("Tempmax").value
+    let bot = value
+    // console.log(bot)
+
+    let reqBody = {
+      name: nametree,
+      desc: dis,
+      base_light: [sunmin, sunmid, sunmax],
+      base_humidity: [watermin, watermid, watermax],
+      base_temp: [tempmin, tempmid, tempmax],
+      mode_status: bot,
+      duration: dura,
+    }
+
+    fetch("https://ecourse.cpe.ku.ac.th/exceed06/api/postnewtree", {
+      method: "PUT",
+      headers: { "Content-type": "application/json; charset=UTF-8" },
+      body: JSON.stringify(reqBody),
+    })
+      .then((response) => response.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err))
+  }
+
   return (
     <body>
       <nav className="sticky-top navbar navbar-expand-md navbar-light bg-success">
@@ -21,9 +57,9 @@ function PreferencePage() {
           <img src="./Setting.png" alt=""></img>
         </div>
         <div className="save">
-          <a href="https://www.youtube.com">
-            <i class="fa-solid fa-floppy-disk fa-2x"></i>
-          </a>
+          <Link to={`/home`}>
+            <i class="fa-solid fa-floppy-disk fa-2x" onClick={handleSubmit}></i>
+          </Link>
         </div>
       </nav>
       <div className="p-container">
@@ -37,6 +73,7 @@ function PreferencePage() {
                   onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
                   placeholder="Duration (sec)"
                   className="duration"
+                  id="duration"
                 ></input>
               </div>
               <div className="threemid">
@@ -49,7 +86,7 @@ function PreferencePage() {
                     }
                     placeholder="Min"
                     className="Sunmin"
-                    pattern="[0-9]*"
+                    id="Sunmin"
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -57,6 +94,7 @@ function PreferencePage() {
                     }
                     placeholder="Mid"
                     className="Sunmid"
+                    id="Sunmid"
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -64,6 +102,7 @@ function PreferencePage() {
                     }
                     placeholder="Max"
                     className="Sunmax"
+                    id="Sunmax"
                   ></input>
                 </div>
                 <div className="waterInput">
@@ -75,6 +114,7 @@ function PreferencePage() {
                     }
                     placeholder="Min"
                     className="Watermin"
+                    id="Watermin"
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -82,6 +122,7 @@ function PreferencePage() {
                     }
                     placeholder="Mid"
                     className="Watermid"
+                    id="Watermid"
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -89,6 +130,7 @@ function PreferencePage() {
                     }
                     placeholder="Max"
                     className="Watermax"
+                    id="Watermax"
                   ></input>
                 </div>
                 <div className="tempInput">
@@ -100,6 +142,7 @@ function PreferencePage() {
                     }
                     placeholder="Min"
                     className="Tempmin"
+                    id="Tempmin"
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -107,6 +150,7 @@ function PreferencePage() {
                     }
                     placeholder="Mid"
                     className="Tempmid"
+                    id="Tempmid"
                   ></input>
                   <input
                     onKeyPress={(e) =>
@@ -114,6 +158,7 @@ function PreferencePage() {
                     }
                     placeholder="Max"
                     className="Tempmax"
+                    id="Tempmax"
                   ></input>
                 </div>
               </div>
@@ -131,11 +176,16 @@ function PreferencePage() {
             <div className="discri">
               <img src="./tree.png" alt=""></img>
               <br></br>
-              <textarea placeholder="Name Tree" className="nametree"></textarea>
+              <textarea
+                placeholder="Name Tree"
+                className="nametree"
+                id="nametree"
+              ></textarea>
               <br></br>
               <textarea
                 placeholder="Discription..."
                 className="discription"
+                id="discription"
               ></textarea>
             </div>
           </div>
