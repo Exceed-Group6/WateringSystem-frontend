@@ -16,7 +16,7 @@ export const Home = () => {
       }
     }, 1000)
   }, [])
-  console.log(treeList.result)
+  // console.log(treeList.result)
 
   return (
     <div className="Home">
@@ -27,11 +27,16 @@ export const Home = () => {
         </div>
       </nav>
       <div className="Card-list">
-        {treeList.map((tree) => (
-          <Link to={`/detail/${tree.tree_id}`} key={tree.tree_id}>
-            <Card id={tree.tree_id} />
-          </Link>
-        ))}
+        {treeList.map(
+          (tree) => (
+            console.log(tree),
+            (
+              <Link to={`/detail/${tree.id}`} key={tree.id}>
+                <Card name={tree.name} />
+              </Link>
+            )
+          )
+        )}
       </div>
       <div className="Add-tree">
         <Link to={`/addTree`}>

@@ -39,7 +39,7 @@
 }
 
 .Card-header h3 {
-  text-decoration: none;
+  margin-bottom: 10px;
 }
 
 .Card {
