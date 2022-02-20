@@ -5,14 +5,15 @@ import { Link } from "react-router-dom";
 import { getAllTree } from "../services/api";
 export const Home = () => {
   const [treeList, setTreeList] = useState([]);
-  // const [toggle, setToggle] = useState(false)
-
-  // setToggle((prevState) => !prevState)
-
   useEffect(() => {
-    getAllTree().then((data) => {
-      setTreeList(data.result);
-    });
+    const count = setInterval(() => {
+      getAllTree().then((data) => {
+        setTreeList(data.result);
+      });
+      return () => {
+        clearInterval(count);
+      };
+    }, 1000);
   }, []);
 
   return (

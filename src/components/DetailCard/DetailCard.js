@@ -1,10 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import "./DetailCard.css";
 import { Link } from "react-router-dom";
 import Segmentedbar from "../segmentedbar/Segmentedbar";
-import { deleteTree, getTreeById } from "../../services/api";
+import { deleteTree, getTreeById, manualWater } from "../../services/api";
 
-const DetailCard = ({ treeList }) => {
+const DetailCard = ({ treeList, treeId }) => {
+  console.log(treeList);
+  const [disabled, setDisable] = useState(false);
+
+  const sendData = () => {
+    console.log(treeList.cur_bot_duration);
+    setDisable(true);
+    manualWater(treeId);
+    setTimeout(() => setDisable(false), treeList.cur_bot_duration * 1000);
+  };
+
+  let aLight =
+    ((treeList?.base_light?.set[1] - treeList?.base_light?.set[0]) * 100) /
+      (treeList?.base_light?.set[2] - treeList?.base_light?.set[0]) -
+    5;
+  let aHumid =
+    ((treeList?.base_humidity?.set[1] - treeList?.base_humidity?.set[0]) *
+      100) /
+      (treeList?.base_humidity?.set[2] - treeList?.base_humidity?.set[0]) -
+    5;
+  let aTemp =
+    ((treeList?.base_temp?.set[1] - treeList?.base_temp?.set[0]) * 100) /
+      (treeList?.base_temp?.set[2] - treeList?.base_temp?.set[0]) -
+    5;
+
   let percentLight =
     ((treeList?.base_light?.current - treeList?.base_light?.set[0]) * 100) /
     (treeList?.base_light?.set[2] - treeList?.base_light?.set[0]);
@@ -60,12 +84,12 @@ const DetailCard = ({ treeList }) => {
             </div>
             <div className='container-right-progress'>
               <div class='w3-container'>
-                <Segmentedbar percentage={percentLight} />
+                <Segmentedbar percentage={percentLight} scale={aLight} />
 
                 <br></br>
-                <Segmentedbar percentage={percentHumid} />
+                <Segmentedbar percentage={percentHumid} scale={aHumid} />
                 <br></br>
-                <Segmentedbar percentage={percentTemp} />
+                <Segmentedbar percentage={percentTemp} scale={aTemp} />
               </div>
             </div>
           </div>
@@ -73,14 +97,27 @@ const DetailCard = ({ treeList }) => {
             <div className='container-right-img2'>
               <img src='./hourglass.png' alt='water'></img>
             </div>
-            <div className='time-button'>10 Sec</div>
-            <button className='watering-button'>
+            <div className='time-button'>
+              <h3>{treeList.cur_bot_duration} sec</h3>
+            </div>
+            <button
+              className={
+                disabled ? "watering-button-gray" : "watering-button-blue"
+              }
+              type='submit'
+              onClick={sendData}
+              disabled={disabled}
+            >
               <img src='./watering-plant.png' alt='watercan'></img>
             </button>
             <div className='container-right-progress'></div>
           </div>
           <div className='container-right'>
-            <Link to={`/preference`} className='preference-button'>
+            <Link
+              to={`/preference/${treeId}`}
+              key={treeId}
+              className='preference-button'
+            >
               Preference configuration
               <img className='pref-img' src='./edit.png' alt='edit'></img>
             </Link>
@@ -92,7 +129,11 @@ const DetailCard = ({ treeList }) => {
               </p>
             </a>
             <Link to={`/home`}>
-              <button type='button' class='btn btn-danger' id='delTree'>
+              <button
+                type='submit'
+                class='btn btn-danger'
+                onClick={() => deleteTree(treeId)}
+              >
                 Delete this tree
               </button>
             </Link>

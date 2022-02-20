@@ -1,6 +1,6 @@
-import React from "react";
-import "./Segmentedbar.css";
-const Segmentedbar = ({ percentage }) => {
+import React from "react"
+import "./Segmentedbar.css"
+const Segmentedbar = ({ percentage, scale }) => {
   const myStyle = {
     width: "4px",
     background: "black",
@@ -10,37 +10,49 @@ const Segmentedbar = ({ percentage }) => {
     left: `${percentage}%`,
     opacity: "1",
     margin: "5px 0 0 0",
-  };
+  }
+  const myStyle1 = {
+    _display: "inline-block",
+    width: `${scale}%`,
+    height: "100%",
+    boxSizing: "border-box",
+    float: "left",
+    backgroundColor: "lightgray",
+  }
+  const myStyle2 = {
+    _display: "inline-block",
+    width: `${100 - scale - 10}%`,
+    height: "100%",
+    boxSizing: "border-box",
+    float: "left",
+    backgroundColor: "lightgray",
+  }
   return (
     <div>
       <div>
-        <span class='det2'></span>
-        <span class='det4'></span>
-        <span class='det4'></span>
-        <span class='det5'></span>
+        <span class="det2"></span>
+        <span class="det4"></span>
+        <span class="det4"></span>
+        <span class="det5"></span>
       </div>
 
-      <div id='bar-container'>
-        <div id='bar'>
-          <span class='seg1'></span>
-          <span class='seg2'></span>
-          <span class='seg3'></span>
-          <span class='seg4'></span>
-          <span class='seg5'></span>
+      <div id="bar-container">
+        <div id="bar">
+          <span style={myStyle1}></span>
+          <span class="seg3"></span>
+          <span style={myStyle2}></span>
         </div>
 
-        <div id='bar-labels'>
-          <span class='seg1-label'>Very low</span>
-          <span class='seg2-label'>Low</span>
-          <span class='seg3-label'>Best</span>
-          <span class='seg4-label'>High</span>
-          <span class='seg5-label'>Very high</span>
+        <div id="bar-labels">
+          <span class="seg2-label"></span>
+          <span class="seg3-label"></span>
+          <span class="seg4-label"></span>
         </div>
 
-        <div id='score' style={myStyle} />
+        <div id="score" style={myStyle} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Segmentedbar;
+export default Segmentedbar
