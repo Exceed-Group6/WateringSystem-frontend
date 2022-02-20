@@ -4,7 +4,6 @@ import Switch from "../components/Switch"
 import "./PreferencePage.css"
 import { Link, useParams } from "react-router-dom"
 import { getTreeById } from "../services/api"
-import { flushSync } from "react-dom"
 
 function PreferencePage() {
   const [value, setValue] = useState()
@@ -25,7 +24,6 @@ function PreferencePage() {
 
   useEffect(() => {
     onGetTreeById(treeId)
-    console.log(tree.cur_bot_status)
   }, [])
 
   const handleSubmit = () => {
@@ -42,8 +40,6 @@ function PreferencePage() {
     let tempmid = document.getElementById("Tempmid").value
     let tempmax = document.getElementById("Tempmax").value
     let bot = value
-    // setValue(value)
-    console.log(bot)
 
     let reqBody = {
       tree_id: treeId,
@@ -92,7 +88,6 @@ function PreferencePage() {
           <div className="cardbody">
             <div className="inputBar">
               <div className="idInput">
-                {/* <i class="fa-solid fa-id-badge fa-4x"></i> */}
                 <img src="./hourglass.png" alt=""></img>
                 <input
                   onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
@@ -104,7 +99,6 @@ function PreferencePage() {
               </div>
               <div className="threemid">
                 <div className="sunInput">
-                  {/* <i class="fa-solid fa-sun fa-4x"></i> */}
                   <img src="./Sun.png" alt=""></img>
                   <input
                     onKeyPress={(e) =>
@@ -136,7 +130,6 @@ function PreferencePage() {
                   ></input>
                 </div>
                 <div className="waterInput">
-                  {/* <i class="fa-solid fa-droplet fa-4x"></i> */}
                   <img src="./Water.png" alt=""></img>
                   <input
                     onKeyPress={(e) =>
@@ -167,7 +160,6 @@ function PreferencePage() {
                   ></input>
                 </div>
                 <div className="tempInput">
-                  {/* <i class="fa-solid fa-temperature-quarter fa-4x"></i> */}
                   <img src="./Temp.png" alt=""></img>
                   <input
                     onKeyPress={(e) =>
