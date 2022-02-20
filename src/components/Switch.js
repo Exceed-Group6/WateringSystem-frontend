@@ -12,14 +12,14 @@ const Switch = ({ isOn, handleToggle }) => {
         type="checkbox"
       />
       <label
-        style={{ background: isOn && "#06D6A0" }}
+        style={{ background: isOn ? "#06D6A0" : "#808080" }}
         className="react-switch-label"
         htmlFor={`react-switch-new`}
       >
         <span className={`react-switch-button`} />
       </label>
     </>
-  );
-};
+  )
+}
 
-export default Switch;
+export default Switch
