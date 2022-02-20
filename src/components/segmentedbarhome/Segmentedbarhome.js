@@ -1,6 +1,6 @@
 import React from "react";
 import "./Segmentedbarhome.css";
-const Segmentedbarhome = ({ percentage }) => {
+const Segmentedbarhome = ({ percentage, scale }) => {
   const myStyle = {
     width: "4px",
     background: "black",
@@ -10,14 +10,28 @@ const Segmentedbarhome = ({ percentage }) => {
     left: `${percentage}%`,
     opacity: "1",
   };
+  const myStyle1 = {
+    _display: "inline-block",
+    width: `${scale}%`,
+    height: "100%",
+    boxSizing: "border-box",
+    float: "left",
+    backgroundColor: "lightgray",
+  };
+  const myStyle2 = {
+    _display: "inline-block",
+    width: `${100 - scale - 10}%`,
+    height: "100%",
+    boxSizing: "border-box",
+    float: "left",
+    backgroundColor: "lightgray",
+  };
   return (
     <div id='home-bar-container'>
       <div id='home-bar'>
-        <span class='home-seg1'></span>
-        <span class='home-seg2'></span>
+        <span style={myStyle1}></span>
         <span class='home-seg3'></span>
-        <span class='home-seg4'></span>
-        <span class='home-seg5'></span>
+        <span style={myStyle2}></span>
       </div>
 
       <div id='home-score' style={myStyle} />
