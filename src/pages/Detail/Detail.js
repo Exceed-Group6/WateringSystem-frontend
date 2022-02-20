@@ -19,6 +19,7 @@ const Detail = () => {
     onGetTreeById(treeId);
   }, []);
 
+
   return (
     <div className='Detail'>
       <nav className='sticky-top navbar navbar-expand-md navbar-light bg-success'>
