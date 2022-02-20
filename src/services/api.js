@@ -40,3 +40,24 @@ export const manualWater = async (treeId) => {
   )
   return response.status
 }
+
+export const getwater = async (treeId) => {
+  const response = await axios.get(
+    ` https://ecourse.cpe.ku.ac.th/exceed06/api/getrecordwater/${treeId}`
+  )
+  return response.data
+}
+
+export const getlight = async (treeId) => {
+  const response = await axios.get(
+    ` https://ecourse.cpe.ku.ac.th/exceed06/api/getrecordlight/${treeId}`
+  )
+  return response.data
+}
+
+export const gettemp = async (treeId) => {
+  const response = await axios.get(
+    ` https://ecourse.cpe.ku.ac.th/exceed06/api/getrecordtemp/${treeId}`
+  )
+  return response.data
+}
