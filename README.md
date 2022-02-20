@@ -1,7 +1,6 @@
-# Getting Started with Create React App
+# Watering System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
+This project was made for Exceed Camp
 ## Available Scripts
 
 In the project directory, you can run:

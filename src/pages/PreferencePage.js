@@ -216,6 +216,7 @@ function PreferencePage() {
                 className="discription"
                 defaultValue={tree?.tree_desc}
                 id="discription"
+                maxLength="300"
               ></textarea>
             </div>
           </div>
