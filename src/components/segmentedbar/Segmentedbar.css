@@ -70,32 +70,32 @@
   background: #b2ebff;
 }
 
-.seg2 {
+/* .seg2 {
   _display: inline-block;
   width: 20%;
   height: 100%;
   box-sizing: border-box;
   float: left;
   background-color: deepskyblue;
-}
+} */
 
 .seg3 {
   _display: inline-block;
-  width: 20%;
+  width: 10%;
   height: 100%;
   box-sizing: border-box;
   float: left;
   background-color: #26be41;
 }
 
-.seg4 {
+/* .seg4 {
   _display: inline-block;
   width: 20%;
   height: 100%;
   box-sizing: border-box;
   float: left;
   background-color: yellow;
-}
+} */
 
 .seg5 {
   _display: inline-block;
@@ -114,7 +114,7 @@
   font-weight: 400;
 }
 
-.seg1-label {
+/* .seg1-label {
   width: 20%;
   display: inline-block;
   text-align: center;
@@ -128,7 +128,7 @@
 }
 
 .seg3-label {
-  width: 20%;
+  width: 10%;
   display: inline-block;
   text-align: center;
 }
@@ -143,4 +143,4 @@
   width: 20%;
   display: inline-block;
   text-align: center;
-}
+} */

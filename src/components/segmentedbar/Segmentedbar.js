@@ -1,6 +1,6 @@
 import React from "react";
 import "./Segmentedbar.css";
-const Segmentedbar = ({ percentage }) => {
+const Segmentedbar = ({ percentage, scale }) => {
   const myStyle = {
     width: "4px",
     background: "black",
@@ -9,6 +9,22 @@ const Segmentedbar = ({ percentage }) => {
     top: "0",
     left: `${percentage}%`,
     opacity: "0.5",
+  };
+  const myStyle1 = {
+    _display: "inline-block",
+    width: `${scale}%`,
+    height: "100%",
+    boxSizing: "border-box",
+    float: "left",
+    backgroundColor: "lightgray",
+  };
+  const myStyle2 = {
+    _display: "inline-block",
+    width: `${100 - scale - 10}%`,
+    height: "100%",
+    boxSizing: "border-box",
+    float: "left",
+    backgroundColor: "lightgray",
   };
   return (
     <div>
@@ -21,19 +37,15 @@ const Segmentedbar = ({ percentage }) => {
 
       <div id='bar-container'>
         <div id='bar'>
-          <span class='seg1'></span>
-          <span class='seg2'></span>
+          <span style={myStyle1}></span>
           <span class='seg3'></span>
-          <span class='seg4'></span>
-          <span class='seg5'></span>
+          <span style={myStyle2}></span>
         </div>
 
         <div id='bar-labels'>
-          <span class='seg1-label'>Lowest</span>
           <span class='seg2-label'></span>
-          <span class='seg3-label'>Mid indicator</span>
+          <span class='seg3-label'></span>
           <span class='seg4-label'></span>
-          <span class='seg5-label'>Highest</span>
         </div>
 
         <div id='score' style={myStyle} />
