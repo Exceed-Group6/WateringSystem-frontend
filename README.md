@@ -1,6 +1,7 @@
 # Watering System
 
-This project was made for Exceed Camp
+This project was made for Exceed Camp. 
+It's about water and plant.  
 ## Available Scripts
 
 In the project directory, you can run:
